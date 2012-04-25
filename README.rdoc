@@ -8,13 +8,11 @@ This application handles the ANUMC gear store inventory. Written in 2012 by Tor 
 The app is run on the anumc server using passenger and apache. 
 
 To update and redeploy follow the following steps:
-<tt>
-git pull
-bundle install
-RAILS_ENV=production rake db:migrate
-RAILS_ENV=production rake assetts:precompile
-touch tmp/restart
-</tt>
+  git pull
+  bundle install
+  RAILS_ENV=production rake db:migrate
+  RAILS_ENV=production rake assetts:precompile
+  touch tmp/restart
 
 == Description of Contents
 
