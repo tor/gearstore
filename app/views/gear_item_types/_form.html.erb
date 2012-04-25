@@ -1,0 +1,34 @@
+<h4>Basic Information</h4>
+
+<%= form_for git do |f| %>
+<table class="data">
+<tr><td>name</td><td><%= f.text_field :name %> </td>
+<tr><td>club hire</td><td><%= f.text_field :club_hire %></td></tr>
+<tr><td>club deposit</td><td><%= f.text_field :club_deposit %></td></tr>
+<tr><td>private hire</td><td><%= f.text_field :private_hire %></td></tr>
+<tr><td>private deposit</td><td> <%= f.text_field :private_deposit %></td></tr>
+<tr><td>sort type</td><td><%= f.select :sort_type, ['description', 'identifier (number)', 'identifer (alpha)'] %></td></tr>
+<tr><td><%= f.submit 'save', :class => "button" %></td><td></td></tr>
+</table>
+
+<% end %>
+
+<% if git.gear_items.size > 0 %>
+  <h4>Items</h4>
+  <table id="gear_item_types" class="data">
+  <thead><tr><th>type</th><th>identifier</th><th>description</th><th>rented</th><th>missing</th><th>action</th></thead></tr>
+    <% git.gear_items.each do |g| %>
+  		<tr>
+  			<td><%=g.gear_item_type.name %></td>
+  			<td><%=g.identifier %></td>
+  			<td><%=g.description %></td>
+  			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
+  			<td><%='yes' if g.missing %></td>
+  			<td>
+          <%=link_to 'more', gear_item_path(g) %> |
+          <%=link_to 'retire', gear_item_path(g), :method => 'delete', :confirm => 'Are you sure?' if not g.rented %>
+        </td>
+  		</tr>
+    <% end %>
+  </table>
+<% end %>

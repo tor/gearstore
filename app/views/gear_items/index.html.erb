@@ -1,0 +1,28 @@
+<h3><%=@label %></h3>
+
+
+
+
+
+<table id="gear_item_types" class="data">
+<thead><tr><th>type</th><th>identifier</th><th>description</th><th>rented</th><th>missing</th><th>action</th></thead></tr>
+<tbody>
+	<% @gear_items.each do |g| %>
+		<tr>
+			<td><%=g.gear_item_type.name %></td>
+			<td><%=g.identifier %></td>
+			<td><%=g.description %></td>
+			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
+			<td><%='yes' if g.missing %></td>
+			<td><%=link_to 'more', gear_item_path(g) %></td>
+		</tr>
+	<% end %>
+</tbody>
+</table>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#inventory").tablesorter({widgets: ['zebra']});
+})
+</script>

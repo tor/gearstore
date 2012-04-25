@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gear store</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if session[:user_id] %>
+
+
+  <div class="menu">
+   	<p><%= image_tag 'logo.png', :width => '160px' %></p>
+
+
+    <div class="submenu">
+  	<%= yield :menu %>
+    </div>
+  	
+  </div>
+  <div class="header">
+    
+ 		<%= link_to 'Ledger', ledgers_path %>
+
+ 		<%= link_to 'Rentals', rentals_path %>
+
+ 		<%= link_to 'Deposits', deposits_path %>
+
+    <%= link_to 'Inventory', gear_items_path(:rented => true) %>
+
+    <%= link_to 'Gear Manager', gear_item_types_path %>
+
+   	<%= link_to 'Logout', logout_path %>
+
+  </div>
+  <div class="container">
+  	<%= yield %>
+  </div>
+<% else %>
+  <div class="login">
+    <%= yield %>
+  </div>
+<% end %>
+
+</body>
+</html>
+
+
+

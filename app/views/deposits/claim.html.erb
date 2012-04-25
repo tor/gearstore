@@ -1,0 +1,16 @@
+
+<h3>Claim Deposit from <%=@deposit.user.name %></h3>
+
+<p><%=label_tag :active_rentals, 'active rentals:' %><%=@deposit.user.rental_number %></p>
+<p><%=label_tag :overdue_rentals, 'overdue rentals:' %><%=@deposit.user.overdue_rental_number %></p>
+<p><%=label_tag :total_deposit, 'total deposit:' %> $<%=@deposit.amount %></p>
+
+
+<%= form_tag deposit_path(@deposit, :claim => true), :method => 'put' do %>
+<%= label_tag :claim_amount, 'claim amount:' %> <%= number_field_tag :claim_amount, params[:claim_amount] %>
+<p>
+<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> 
+<p>
+<%= submit_tag 'update', :class => 'button' %>
+<% end %>
+

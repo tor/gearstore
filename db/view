@@ -1,0 +1,7 @@
+
+
+create view gs3_users as select users.uid as id,name as username,pass,mail,CONCAT_WS(' ',field_first_name_value,field_last_name_value) as name,field_mobile_phone_value as phone from users inner join node on(users.uid = node.uid) inner join content_type_uprofile on(node.vid = content_type_uprofile.vid);
+
+create view gs3_roles_users as select uid as user_id, rid as role_id from users_roles;
+
+create view gs3_roles as select rid as id, name from role;

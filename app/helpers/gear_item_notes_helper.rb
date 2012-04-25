@@ -1,0 +1,2 @@
+module GearItemNotesHelper
+end

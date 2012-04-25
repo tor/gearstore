@@ -1,0 +1,11 @@
+<%=form_for @gear_item do |f|%>
+<table class="data">
+<tr><th>type</th><td><%=f.select :gear_item_type_id, options_from_collection_for_select(GearItemType.all_sorted, :id, :name)  %></td></tr>
+<tr><th>identifier</th><td><%=f.text_field :identifier %></td></tr>
+<tr><th>description</th><td><%=f.text_field :description %></td></tr>
+<tr><th>size</th><td><%=f.text_field :size %></td></tr>
+<tr><th>year purchased</td><td><%=f.text_field :year_purchased %></td></tr>
+<tr><th>&nbsp;</th><td><%=f.submit 'update', :class => 'button' %></td></tr>
+</table>
+<% end %>
+

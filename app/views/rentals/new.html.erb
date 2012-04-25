@@ -1,0 +1,138 @@
+<h3 id="title">New Rental for <%=@user.name %></h3>
+
+<p>
+
+<% if @user.has_overdue? %>
+<%=@user.name %> has <%=@user.rental_number %> current rentals and <%= problem_tag("#{@user.overdue_rental_number} overdue") %> rentals. 
+<% else %>
+<%=@user.name %> has <%=@user.rental_number %> current rentals. 
+<% end %>
+
+</p>
+
+
+<%= nested_form_for @rental do |f| %>
+	<%=f.hidden_field :user_id %>
+	<div class="long_col_dark">item type</div><div class="long_col_dark">item</div><div class="col_dark">fee ($)</div><div class="long_col_dark">deposit ($)</div>
+	<div class="clear">
+	<p><%= f.fields_for :rental_items %> </p>
+	<p><%= f.link_to_add 'add item', :rental_items %> </p>
+
+	<div class="long_col" ></div><div class="long_col"></div>
+	<div class="col"><%= f.text_field :fee, :size => 4 %> </div>
+	<div class="col"><%= f.text_field :deposit, :size => 4 %></div>
+	<div class="clear"></div>
+
+	<h4>Summary:</h4>
+	<p>
+		<%=label_tag :club_trip, 'club trip:' %> <%= check_box_tag :club_trip %>
+	</p>
+	<p>
+		<%=label_tag :current_deposit, 'current deposit:' %> $<%= @user.deposit_amount %>
+	</p>
+	<p>
+		<%=label_tag :total_to_collect, 'total to collect:' %> $<span id="total_to_collect">0</span>
+	</p>
+  <p>
+    <%=label_tag :notes, 'note:' %> <%=f.text_area :note, :cols => 50, :rows => 10 %>
+  </p>
+	<p>
+		<%=label_tag :return_date, 'return date:' %> <%= f.date_select :return_on %>
+	</p>
+	<p>
+		<%=label_tag :approver, 'approver:' %>
+		<%= f.collection_select :approver_id, User.admins, :id, :name %> 
+
+		<%= f.submit 'Submit' %>
+	</p>
+<% end %>
+
+<script type="text/javascript">
+
+/* this is a bit convoluted, but the basic idea is as follows.
+
+1. Add a hook to all selects of class "watch", which are the gear_item_type selects
+2. If there is a change then find the corresponding gear_item select and update it.
+
+Note that @options stores a hash of all items for each gear item type.
+
+*/
+
+var options_lookup = <%=raw(@options) %>;
+
+var club_fee_lookup = <%=raw(@gear_club_fee) %>;
+var club_deposit_lookup = <%=raw(@gear_club_deposit) %>;
+var private_fee_lookup = <%=raw(@gear_private_fee) %>;
+var private_deposit_lookup = <%=raw(@gear_private_deposit) %>;
+
+/* dynamically update the total to collect from fee and deposit */
+function update_total_costs() {
+	var fee = 0;
+	var deposit = 0;
+	$('.fee').each(function() {
+		if ($(this).parents('div.rental_item_form:first').is(':visible')) {
+			if (!isNaN(this.value) && this.value.length != 0) {
+        if (parseInt(this.value) > fee) {
+  				fee = parseInt(this.value);
+        }
+			}
+		}
+	});
+
+	$('.deposit').each(function() {
+		if ($(this).parents('div.rental_item_form:first').is(':visible')) {
+			if (!isNaN(this.value) && this.value.length != 0) {
+        if (parseInt(this.value) > deposit) {
+  				deposit = parseInt(this.value);
+        }
+			}
+		}
+	});
+
+	$('#rental_fee').val(fee);
+	$('#rental_deposit').val(deposit);
+	$('#total_to_collect').html(fee + deposit);
+}
+
+function update_row_costs(row) {
+	var val = row.find('select.watch:first').val();
+	var club = $('#club_trip').attr('checked');
+	if (club) {
+		row.find('input.fee').val(club_fee_lookup[val]);
+		row.find('input.deposit').val(club_deposit_lookup[val]);
+	}else {
+		row.find('input.fee').val(private_fee_lookup[val]);
+		row.find('input.deposit').val(private_deposit_lookup[val]);
+	}
+}
+
+$(document).bind('nested:fieldRemoved', function() {
+	update_total_costs();
+});
+
+$('#rental_fee, #rental_deposit').change(function() {
+	$('#total_to_collect').html(parseInt($('#rental_fee').val()) + parseInt($('#rental_deposit').val()));
+});
+
+$('#club_trip').change(function() {
+	$('div.rental_item_form').each(function() {
+		update_row_costs($(this));
+	});
+	update_total_costs();
+});
+
+$('select.watch').live('change', function(event) {
+
+	var val = $(this).val();
+	$(this).parents('div.rental_item_form:first').find('select.update').html(options_lookup[val]);
+
+	update_row_costs($(this).parents('div.rental_item_form:first'));
+	update_total_costs();
+});
+
+
+</script>
+
+
+
+

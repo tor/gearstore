@@ -1,0 +1,19 @@
+<div class="rental_item_form">
+
+<div class="long_col">
+<%=select_tag :gear_item_type_id, options_from_collection_for_select(GearItemType.all_available, :id, :name), :prompt => 'choose type', :class => "watch" %>
+</div>
+<div class="long_col">
+<%=f.collection_select :gear_item_id, [], :id, :name, {}, {:class => "update"} %>
+</div>
+<div class="col">
+<%=f.text_field :fee, :size => 4, :disabled => true, :class => 'fee' %>
+</div>
+<div class="long_col">
+<%=f.text_field :deposit, :size => 4, :disabled => true, :class => 'deposit' %>
+
+<%=f.link_to_remove  'remove' %>
+</div>
+<div class="clear">
+</div>
+</div>

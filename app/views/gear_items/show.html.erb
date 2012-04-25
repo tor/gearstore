@@ -1,0 +1,68 @@
+
+<h3>Gear Item: <%= @gear_item.gear_item_type.name %></h3>
+
+<h4>Basic Information</h4>
+
+<%=form_for @gear_item do |f|%>
+<table class="data">
+<tr><th>type</th><td><%=@gear_item.gear_item_type.name %></td></tr>
+<tr><th>identifier</th><td><%=f.text_field :identifier %></td></tr>
+<tr><th>description</th><td><%=f.text_field :description %></td></tr>
+<tr><th>size</th><td><%=f.text_field :size %></td></tr>
+<tr><th>year purchased</td><td><%=f.text_field :year_purchased %></td></tr>
+<tr><th>missing</td><td><%=f.check_box :missing %></td></tr>
+<tr><th>status</th><td><%="rented to " + @gear_item.rented_to.name if @gear_item.rented %></td></tr>
+<tr><th>&nbsp;</th><td><%=f.submit 'update', :class => 'button' %></td></tr>
+</table>
+<% end %>
+
+<h4>History</h4>
+
+<% if @notes.size == 0 %>
+There is no history.
+
+<h4>Add Note</h4>
+<% else %>
+
+<table class="data" id="history">
+<tr><th>date rented</th><th>rented to</th><th>date returned</th><th>note</th><th>rental approver</th><th>return approver</th></tr>
+
+<% @notes.each do |note| %>
+<tr>
+	<% if note.rental_item_id %>
+		<% ri = note.rental_item %>
+		<td><%= date_format(ri.created_at) %></td>
+		<td><%= ri.rental.user.name %></td>
+		<td><%= date_format(ri.returned_on) if ri.returned_on %> <%= ' (missing)' if ri.missing %></td>
+		<td><%=ri.return_note%></td>
+		<td><%=ri.rental.approver.name %></td>
+		<td><%=ri.return_approver.name if ri.returned_on %></td>
+	<% else %>
+		<td><%= date_format(note.created_at) %></td>
+		<td></td>
+		<td></td>
+		<td><%= note.note %></td>
+		<td></td>
+		<td><%= note.approver.name %></td>
+	<% end %>
+</tr>
+<% end %>
+
+</table>
+<% end %>
+
+<%=form_for @note do |f| %>
+<p>
+<%=f.hidden_field :gear_item_id %>
+<%=f.text_field :note %>
+<%=f.collection_select :approver_id, User.admins, 'id', 'name' %> <%=submit_tag 'add note' %>
+</p>
+<% end %>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#history").tablesorter({widgets: ['zebra']});
+})
+</script>

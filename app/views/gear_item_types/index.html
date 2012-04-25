@@ -1,0 +1,32 @@
+<h3>Gear Manager</h3>
+
+<table id="inventory" class="data">
+<thead><tr><th>name</th><th>private hire</th><th>private deposite</th><th>club hire</th><th>club deposit</th><th>number</th><th>action</th></thead></tr>
+<tbody>
+	<% @gits.each do |git| %>
+		<tr>
+			<td><%=git.name %></td>
+			<td><%=git.private_hire %></td>
+      <td><%=git.private_deposit %></td>
+      <td><%=git.club_hire %></td>
+      <td><%=git.club_deposit %></td>
+      <td><%=git.gear_items.size %></td>
+      <td>
+        <%= link_to 'edit', edit_gear_item_type_path(git) %>  
+        <% if git.gear_items.size == 0 %>
+        | <%= link_to 'delete', gear_item_type_path(git), :method => 'delete', :confirm => 'are you sure?' %>
+        <% end %>
+      </td>
+		</tr>
+	<% end %>
+</tbody>
+</table>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#inventory").tablesorter({widgets: ['zebra'], sortList: [[0,0]] });
+})
+</script>
+
+

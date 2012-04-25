@@ -1,0 +1,10 @@
+<% content_for :menu do %>
+	<ul>
+		<li><%=link_to 'all types', gear_item_types_path %> </li>
+		<li><%=link_to 'create item type', new_gear_item_type_path %> </li>
+    <li><%=link_to 'create item', new_gear_item_path %> </li>
+	</ul>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
+

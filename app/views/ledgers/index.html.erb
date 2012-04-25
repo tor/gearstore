@@ -1,0 +1,62 @@
+<h3>Ledger</h3>
+
+<div id="manual" style="display: none">
+  <h4>Manual Payment</h4>
+  <%= form_for @new do |f| %>
+    <p><%=label_tag :amount,      'amount:' %><%= f.text_field :amount %></p>
+    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %></p>  
+    <p><%=label_tag :approver,    'approver:' %> <%= f.collection_select :approver_id, User.admins, 'id', 'name' %></p>
+    <p><%=submit_tag 'make payment', :class => 'button' %></p>
+  <% end %>
+</div>
+
+<div id="reconcile" style="display: none">
+  <h4>Reconcile</h4>
+  <%= form_for @new do |f| %>
+    <%=hidden_field_tag :reconcile, 'yes' %>
+    <p><%=label_tag :amount,      'true amount:' %><%= f.text_field :amount %></p>
+    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %></p>  
+    <p><%=label_tag :approver,    'approver:' %> <%= f.collection_select :approver_id, User.admins, 'id', 'name' %></p>
+    <p><%=submit_tag 'reconcile', :class => 'button', :confirm => 'Are you sure you want to reconcile?' %></p>
+  <% end %>
+</div>
+
+
+<table class="data" id="ledger">
+<thead>
+  <tr>
+    <th>date</th>
+    <th>approver</th>
+    <td>customer</th>
+    <th>description</th>
+    <th>amount</th>
+    <th>tally</th>
+  </tr>
+</thead>
+
+
+<% tally = @balance %>
+
+<tr><th><%= @from%></td><td>&nbsp;</td><td>&nbsp;</td><td>opening balance</td><td>&nbsp;</td><td>$<%=@balance %></td></tr>
+<% @entries.each do |entry| %>
+<% tally += entry.amount %>
+<tr>
+  <th><%=entry.created_at %></td>
+  <td><%=entry.approver.name %></td>
+  <td><%=entry.user.name if entry.user %></td>
+  <td><%= entry.description %></td>
+  <td>$<%= entry.amount %></td>
+  <td>$<%= tally %></td>
+</tr>
+<% end %>
+
+</table>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#ledger').tablesorter({widgets: ['zebra']});
+})
+</script>

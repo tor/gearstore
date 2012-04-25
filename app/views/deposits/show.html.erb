@@ -1,0 +1,14 @@
+
+<h3>Deposit for <%=@deposit.user.name %></h3>
+
+<p><%=label_tag :active_rentals, 'active rentals:' %><%=@deposit.user.rental_number %></p>
+<p><%=label_tag :overdue_rentals, 'overdue rentals:' %><%=@deposit.user.overdue_rental_number %></p>
+<p><%=label_tag :total_deposit, 'total deposit:' %> $<%=@deposit.amount %></p>
+
+<%= form_tag deposit_path(@deposit), :method => 'put' do %>
+<%= label_tag :return_amount, 'return amount:' %> <%= number_field_tag :return_amount, params[:return_amount] %>
+<p>
+<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> 
+<p>
+<%= submit_tag 'update', :class => 'button' %>
+<% end %>

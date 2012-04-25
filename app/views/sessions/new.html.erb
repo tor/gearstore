@@ -1,0 +1,14 @@
+
+<%= image_tag 'logo.png' %>
+
+<%= form_tag sessions_path do %>
+<p>
+<label>username</label> <%= text_field_tag :user %>
+</p>
+<p>
+<label>password</label> <%= password_field_tag :pass %>
+</p>
+
+<%= submit_tag 'Login', :class => 'button' %>
+
+<% end %>

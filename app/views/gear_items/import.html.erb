@@ -1,0 +1,9 @@
+
+<h3>Import</h3>
+
+
+<%= form_tag run_import_gear_items_path, :method => 'post', :multipart => true, :class => "form-horizontal" do %>	   
+<p><%=label_tag :import_file , 'import file:' %> <%= file_field_tag(:import) %></p>
+<p><%=submit_tag 'upload', :class => 'button' %></p>
+<% end %>
+

@@ -1,0 +1,65 @@
+<h3>Rental #<%=@rental.id %> to <%=@rental.user.name %></h3>
+
+<p><%=label_tag :rented_on, 'rented on:' %> <%=@rental.rented_on_pretty %></p>
+<p><%=label_tag :approver, 'approved by:' %> <%=@rental.approver.name %></p>
+<p><%=label_tag :due_on, 'due on:' %> <%=@rental.return_on_pretty %> </p>
+<p><%=label_tag :status, 'status:' %> <%=overdue_tag(@rental)%> </p>
+<p><%=label_tag :deposit, 'deposit paid:' %>$<%=@rental.deposit %></p>
+<p><%=label_tag :fee, 'fee paid:' %> $<%=@rental.fee %></p>
+<p><%=label_tag :total_deposit, 'deposit held:' %>$<%=@rental.user.deposit_amount %>
+<% if @rental.user.rental_number == 0 %>
+(user has no active rentals, <%=link_to 'return deposit', deposit_path(:id => @rental.user.deposit, :return_amount => @rental.user.deposit.amount) %>)
+<% else %>
+(user <b>has</b> active rentals, <%=link_to 'return deposit', deposit_path(:id => @rental.user.deposit, :return_amount => @rental.deposit) %>)
+<% end %>
+</p> 
+<p><%=label_tag :active_rentals, 'active rentals:' %><%=@rental.user.rental_number %></p>
+<p><%=label_tag :overdue_rentals, 'overdue rentals:' %><%=@rental.user.overdue_rental_number %></p>
+<p><%=label_tag :note, 'note:' %> <%= text_area_tag 'note', @rental.note, :cols => 30, :rows => 5, :disabled => true %></p>
+
+<%= form_tag rental_path(@rental), :method => 'put' do %>
+<table class="data" id="items">
+<thead><tr><th>type</th><th>identifier</th><th>description</th><th>returned</th><th>missing</th><th>note</th><th>update date</th><th>approver</th></tr></thead>
+<% @rental.rental_items.each do |i| %>
+	<tr>
+		<td><%=link_to i.gear_item.gear_item_type.name, gear_item_path(i.gear_item) %></td>
+		<td><%=i.gear_item.identifier %></td>
+		<td><%=i.gear_item.description %></td>
+
+		<% if i.returned_on.nil? %>
+			<td>
+			<%=check_box_tag "returned[#{i.id}]", 'true', false, :class => "watch" %> 
+			</td>
+			<td>
+			<%=check_box_tag "missing[#{i.id}]", 'true', false, :class => "watch" %>
+			</td>
+			<td>
+				<%=text_field_tag "returned_note[#{i.id}]", '', :size => 50 %>
+			</td>
+			<td></td><td></td>
+		<% else %>
+			<td><%= 'yes' if not i.missing %></td>
+			<td><%= 'yes' if i.missing %></td>
+			<td><%=i.return_note%></td>
+			<td><%=date_format(i.returned_on) %></td>
+			<td><%=i.return_approver.name %></td>
+		<% end %>
+<% end %>
+</table>
+<p>
+<%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> <%=submit_tag 'update' %>
+</p>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#items').tablesorter({widgets: ['zebra']});
+})
+
+
+</script>
+
+
+
+
+

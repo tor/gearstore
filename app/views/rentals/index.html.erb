@@ -1,0 +1,53 @@
+<h3><%=@label %></h3>
+
+<% if @rentals %>
+<table class="data" id="rentals">
+<thead>
+	<tr>
+		<th>rented on</th>
+		<th>user</th>
+		<th>email</th>
+    <th>mobile</th>
+		<th>approver</th>
+		<th>items</th>
+		<th>returned</th>
+		<th>due date</th>
+		<th>action</th>
+		</tr></thead>
+<% @rentals.each do |r| %>
+<tr>
+	<td><%=r.rented_on_pretty %></td>
+	<td><%=r.user.name %></td>
+	<td><%=r.user.mail %></td>
+  <td><%=r.user.phone.gsub(/\s/, '') %></td>
+	<td><%=r.approver.name %></td>
+	<td><%=r.rental_items.count %></td>
+	<td><%=(r.returned?)?'yes':(r.returned_rental_items.count == 0)?'':r.returned_rental_items.count %></td>
+	<td><%=return_on_tag(r) %></td>
+	<td><%=link_to 'view or return', rental_path(r) %></td>
+</tr>
+<% end %>
+</table>
+<% end %>
+
+<% if params[:search_new] %>
+	<table class="data" id="rentals">	
+		<thead><tr><th>name</th><th>#rentals</th><th>#current rentals</th><th>#overdue rentals</td><th>status</th></thead>
+		<% @users.each do |u| %>
+			<tr>
+				<td> <%=link_to u.name, new_rental_path(:user_id => u.id) %></td>
+				<td><%=u.rentals.size%></td>
+				<td><%=u.rental_number %></td>
+				<td><%=u.overdue_rental_number %></td>
+				<td><%= problem_tag('has overdue rentals') if u.has_overdue? %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#rentals').tablesorter({widgets: ['zebra']});
+})
+</script>
