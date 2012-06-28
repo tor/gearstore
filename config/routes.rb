@@ -2,7 +2,11 @@ Gs2::Application.routes.draw do
 	
 
   resources :sessions
-	resources :rentals 
+	resources :rentals do
+		collection do
+			get 'download'
+		end
+	end
 	resources :gear_item_notes 
   resources :gear_item_types
 	resources :gear_items do

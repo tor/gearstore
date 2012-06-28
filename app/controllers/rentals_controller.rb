@@ -20,6 +20,53 @@ class RentalsController < ApplicationController
 		end
 	end
 
+	def download
+		hline = "-------------------------------------------------------------\n"
+		
+		start = Time.now.at_beginning_of_day
+
+		filename = "/tmp/rental_export#{Time.now}"
+		f = File.new(filename, 'w')
+
+		f.write("RENTALS\n")
+
+		rentals = Rental.find(:all, :conditions => ['created_at > ?', start])
+		
+		rentals.each do |r|
+			f.write(hline)
+			f.write("Rented to: #{r.user.name}\n")
+			f.write(hline)
+			f.write("Items:\n")
+			r.rental_items.each do |ri|
+				f.write("\t" + ri.gear_item.identifier + "\t" + ri.gear_item.gear_item_type.name + "\n")
+			end
+			f.write("Deposit: $#{r.deposit}\n")
+			f.write("Fee: $#{r.fee}\n")
+		end
+	
+		f.write("\n\nRETURNS\n")
+
+		returns = RentalItem.find(:all, :conditions => ['returned_on > ?', start]).map{|ri| ri.rental}.uniq
+
+		returns.each do |r|
+			f.write(hline)
+			f.write("Return from: #{r.user.name}\n")
+			f.write(hline)
+			f.write("Items:\n")
+			r.rental_items.each do |ri|
+				if ri.returned_on > start
+					f.write("\t" + ri.gear_item.identifier + "\t" + ri.gear_item.gear_item_type.name + "\n")
+				end
+			end
+		end
+		
+		f.close
+
+
+
+		send_file filename
+	end
+
 	def new
 		@user = User.find(params[:user_id])
 		@rental = Rental.new
