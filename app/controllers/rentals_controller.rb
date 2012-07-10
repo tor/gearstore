@@ -67,6 +67,20 @@ class RentalsController < ApplicationController
 		send_file filename
 	end
 
+	def edit
+		@rental = Rental.find(params[:id])
+		@user = @rental.user
+		@gear_item_types = GearItemType.all_sorted
+		@options = "{" + @gear_item_types.map do |type|
+			"#{type.id} : '" + type.available_gear_items.map{|i| "<option value=\"#{i.id}\">#{i.identifier} : #{i.clean_description}</option>"}.join + "'"
+		end.join(",") + "}"
+		@gear_club_fee = "{" + @gear_item_types.map{|git| "#{git.id} : #{git.club_hire}"}.join(",") + "}";
+		@gear_club_deposit = "{" + @gear_item_types.map{|git| "#{git.id} : #{git.club_deposit}"}.join(",") + "}";
+		@gear_private_fee = "{" + @gear_item_types.map{|git| "#{git.id} : #{git.private_hire}"}.join(",") + "}";
+		@gear_private_deposit = "{" + @gear_item_types.map{|git| "#{git.id} : #{git.private_deposit}"}.join(",") + "}";
+
+	end
+
 	def new
 		@user = User.find(params[:user_id])
 		@rental = Rental.new
@@ -87,28 +101,32 @@ class RentalsController < ApplicationController
 	
 	def update
 		@rental = Rental.find(params[:id])
-		ret = params[:returned]?params[:returned]:{}
-		mis = params[:missing]?params[:missing]:{}
-		returned = (ret.map{|id,val| id} + mis.map{|id,val| id}).uniq 
-		returned.each do |id|
-			puts params[:returned_note[id]]
-			puts params['returned_note']
-			rental_item = RentalItem.find(id)
-			rental_item.update_attributes(
-							:returned_on => Time.now, 
-							:return_approver_id => params[:approver_id], 
-							:return_note => params['returned_note'][id],
-							:missing => (mis[id] != nil))
-			GearItemNote.create! 	:note => params['returned_note'][id], 
-														:rental_item_id => rental_item.id, 
-														:gear_item_id => rental_item.gear_item_id,
-														:approver_id => params[:approver_id]
 
-			if mis[id]
-				rental_item.gear_item.update_attributes(:missing => true)
+		if params[:returned] or params[:missing]
+			ret = params[:returned]?params[:returned]:{}
+			mis = params[:missing]?params[:missing]:{}
+			returned = (ret.map{|id,val| id} + mis.map{|id,val| id}).uniq 
+			returned.each do |id|
+				puts params[:returned_note[id]]
+				puts params['returned_note']
+				rental_item = RentalItem.find(id)
+				rental_item.update_attributes(
+								:returned_on => Time.now, 
+								:return_approver_id => params[:approver_id], 
+								:return_note => params['returned_note'][id],
+								:missing => (mis[id] != nil))
+				GearItemNote.create! 	:note => params['returned_note'][id], 
+															:rental_item_id => rental_item.id, 
+															:gear_item_id => rental_item.gear_item_id,
+															:approver_id => params[:approver_id]
+	
+				if mis[id]
+					rental_item.gear_item.update_attributes(:missing => true)
+				end
 			end
+		else
+			@rental.update_attributes(params[:rental])
 		end
-
 		redirect_to rental_path
 	end
 

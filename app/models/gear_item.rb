@@ -14,6 +14,10 @@ class GearItem < ActiveRecord::Base
 		description.to_s.gsub(/[^a-zA-Z0-9 ]/, '')
 	end
 
+	def name
+		"#{identifier} : #{clean_description}"	
+	end
+
 	def self.overdue
 		Rental.overdue.map{|rental| rental.rental_items.reject{|ri| ri.returned_on != nil}.map{|ri| ri.gear_item}}.flatten
 	end

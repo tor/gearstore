@@ -6,8 +6,6 @@
 	<tr>
 		<th>rented on</th>
 		<th>user</th>
-		<th>email</th>
-    <th>mobile</th>
 		<th>approver</th>
 		<th>items</th>
 		<th>returned</th>
@@ -18,13 +16,11 @@
 <tr>
 	<td><%=r.rented_on_pretty %></td>
 	<td><%=r.user.name %></td>
-	<td><%=r.user.mail %></td>
-  <td><%=r.user.phone.gsub(/\s/, '') %></td>
 	<td><%=r.approver.name %></td>
 	<td><%=r.rental_items.count %></td>
 	<td><%=(r.returned?)?'yes':(r.returned_rental_items.count == 0)?'':r.returned_rental_items.count %></td>
 	<td><%=return_on_tag(r) %></td>
-	<td><%=link_to 'view or return', rental_path(r) %></td>
+	<td><%=link_to 'view or return', rental_path(r) %> | <%= link_to 'edit', edit_rental_path(r) %></td>
 </tr>
 <% end %>
 </table>

@@ -16,5 +16,4 @@
 //= require jquery-tablesorter
 //= require jquery-multiselect
 //= require jquery-tools
-//= require jquery_nested_form
 

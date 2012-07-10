@@ -1,5 +1,7 @@
 <h3>Rental #<%=@rental.id %> to <%=@rental.user.name %></h3>
 
+<p><%=label_tag :user_email, 'user email:' %> <%=@rental.user.mail %></p>
+<p><%=label_tag :user_phone, 'user phone:' %> <%=@rental.user.phone.gsub(/\s/, '') %></p>
 <p><%=label_tag :rented_on, 'rented on:' %> <%=@rental.rented_on_pretty %></p>
 <p><%=label_tag :approver, 'approved by:' %> <%=@rental.approver.name %></p>
 <p><%=label_tag :due_on, 'due on:' %> <%=@rental.return_on_pretty %> </p>

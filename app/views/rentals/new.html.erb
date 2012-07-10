@@ -1,5 +1,9 @@
 <h3 id="title">New Rental for <%=@user.name %></h3>
 
+<%= render :partial => 'form' %>
+
+<% if false %>
+
 <p>
 
 <% if @user.has_overdue? %>
@@ -133,6 +137,6 @@ $('select.watch').live('change', function(event) {
 
 </script>
 
-
+<% end %>
 
 
