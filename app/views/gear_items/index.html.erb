@@ -1,8 +1,18 @@
 <h3><%=@label %></h3>
 
 
+<% if @type %>
+	<%= form_tag set_missing_gear_items_path do %>
+		<%= hidden_field_tag 'type', @type %>
+		<%= submit_tag 'mark all as missing', :confirm => "Are you sure you want to mark all '#{@gear_item_type.name}' as missing?" %>
+	<% end %>
+<% end %>
 
+<%= form_tag update_missing_gear_items_path do %>
+<%= hidden_field_tag 'type', @type %>
 
+<%= submit_tag 'update changes' %>
+<p>
 
 <table id="gear_item_types" class="data">
 <thead><tr><th>type</th><th>identifier</th><th>description</th><th>rented</th><th>missing</th><th>action</th></thead></tr>
@@ -13,12 +23,16 @@
 			<td><%=g.identifier %></td>
 			<td><%=g.description %></td>
 			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
-			<td><%='yes' if g.missing %></td>
+			<td>
+				<%= check_box_tag "missing[#{g.id}]", true, g.missing %>
+			</td>
 			<td><%=link_to 'more', gear_item_path(g) %></td>
 		</tr>
 	<% end %>
 </tbody>
 </table>
+
+<% end %>
 
 
 <script type="text/javascript">

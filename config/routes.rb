@@ -12,6 +12,8 @@ Gs2::Application.routes.draw do
 	resources :gear_items do
 		collection do
 			get 'import'
+			post 'update_missing'
+			post 'set_missing'
 			post 'run_import'
 		end
 	end

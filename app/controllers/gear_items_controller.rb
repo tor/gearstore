@@ -10,10 +10,25 @@ class GearItemsController < ApplicationController
     GearItem.create params[:gear_item]
     redirect_to gear_item_types_path
   end
+	
+	def set_missing
+		@type = params[:type]
+		GearItem.update_all({:missing => true}, {:gear_item_type_id => @type})
+		redirect_to gear_items_path(:type => @type)
+	end
+
+	def update_missing
+		@type = params[:type]
+		missing = params[:missing].map{|k, v| k.to_i}
+		GearItem.update_all({:missing => false}, {:gear_item_type_id => @type})
+		GearItem.update_all({:missing => true}, ['id in (?)', missing])
+		redirect_to gear_items_path(:type => @type)
+	end
 
 	def index
 		@type = params[:type]
 		if params[:type]
+			@gear_item_type = GearItemType.find(@type)
 			@gear_items = GearItem.find_all_by_gear_item_type_id(params[:type])
 			@label = 'Inventory'
 		elsif params[:missing]
