@@ -1,30 +1,49 @@
 <h3><%=@label %></h3>
 
 
-<% if @type %>
+<% if params[:filter] == 'type' %>
 	<%= form_tag set_missing_gear_items_path do %>
-		<%= hidden_field_tag 'type', @type %>
+		<%= hidden_field_tag 'filter', @filter %>
+		<%= hidden_field_tag 'data', params[:data] %>
 		<%= submit_tag 'mark all as missing', :confirm => "Are you sure you want to mark all '#{@gear_item_type.name}' as missing?" %>
 	<% end %>
 <% end %>
 
 <%= form_tag update_missing_gear_items_path do %>
-<%= hidden_field_tag 'type', @type %>
+
+<%= hidden_field_tag 'filter', @filter %>
+<%= hidden_field_tag 'data', params[:data] %>
 
 <%= submit_tag 'update changes' %>
 <p>
 
 <table id="gear_item_types" class="data">
-<thead><tr><th>type</th><th>identifier</th><th>description</th><th>rented</th><th>missing</th><th>action</th></thead></tr>
+<thead>
+	<tr>
+		<th>type</th>
+		<th>identifier</th>
+		<th>description</th>
+		<th>size</th>
+		<th>rented</th>
+		<th>missing</th>
+		<th>broken</th>
+		<th>action</th>
+	</tr>
+</thead>
+
 <tbody>
 	<% @gear_items.each do |g| %>
 		<tr>
 			<td><%=g.gear_item_type.name %></td>
 			<td><%=g.identifier %></td>
 			<td><%=g.description %></td>
+			<td><%=g.size %></td>
 			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
 			<td>
 				<%= check_box_tag "missing[#{g.id}]", true, g.missing %>
+			</td>
+			<td>
+				<%= check_box_tag "broken[#{g.id}]", true, g.broken %>
 			</td>
 			<td><%=link_to 'more', gear_item_path(g) %></td>
 		</tr>
@@ -37,6 +56,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#inventory").tablesorter({widgets: ['zebra']});
+	$("#gear_item_types").tablesorter({widgets: ['zebra']});
 })
 </script>

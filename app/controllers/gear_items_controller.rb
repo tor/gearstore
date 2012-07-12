@@ -18,35 +18,21 @@ class GearItemsController < ApplicationController
 	end
 
 	def update_missing
-		@type = params[:type]
-		missing = params[:missing].map{|k, v| k.to_i}
-		GearItem.update_all({:missing => false}, {:gear_item_type_id => @type})
+		get_display
+		missing = params[:missing].to_a.map{|k, v| k.to_i}
+		broken = params[:broken].to_a.map{|k,v| k.to_i}
+		
+		GearItem.update_all({:missing => false}, ['id in (?)', @gear_items.map{|gi| gi.id}])
 		GearItem.update_all({:missing => true}, ['id in (?)', missing])
-		redirect_to gear_items_path(:type => @type)
+
+		GearItem.update_all({:broken => false}, ['id in (?)', @gear_items.map{|gi| gi.id}])
+		GearItem.update_all({:broken => true}, ['id in (?)', broken])
+
+		redirect_to gear_items_path(:filter => @filter, :data => params[:data])
 	end
 
 	def index
-		@type = params[:type]
-		if params[:type]
-			@gear_item_type = GearItemType.find(@type)
-			@gear_items = GearItem.find_all_by_gear_item_type_id(params[:type])
-			@label = 'Inventory'
-		elsif params[:missing]
-			@gear_items = GearItem.find_all_by_missing(true)
-			@label = 'Missing inventory'
-		elsif params[:rented]
-			@gear_items = GearItem.find_all_by_rented(true)
-			@label = 'Rented inventory'
-		elsif params[:overdue]
-			@gear_items = GearItem.overdue
-			@label = 'Overdue inventory'
-    elsif params[:retired]
-      @gear_items = GearItem.retired
-      @label = 'Retired inventory'
-		else
-			@gear_items = GearItem.all	
-			@label = 'Entire inventory'
-		end
+		get_display
 	end
 
   def destroy
@@ -88,6 +74,34 @@ class GearItemsController < ApplicationController
 	end
 
 	protected
+
+	def get_display
+		@filter = params[:filter]
+		if @filter == 'type'
+			@type = params[:data].to_i
+			@gear_item_type = GearItemType.find(@type)
+			@gear_items = GearItem.find_all_by_gear_item_type_id(@type)
+			@label = 'Inventory'
+		elsif @filter == 'missing'
+			@gear_items = GearItem.find_all_by_missing(true)
+			@label = 'Missing inventory'
+		elsif @filter == 'broken'
+			@gear_items = GearItem.find_all_by_broken(true)
+			@label = 'Broken inventory'
+		elsif @filter == 'rented'
+			@gear_items = GearItem.find_all_by_rented(true)
+			@label = 'Rented inventory'
+		elsif @filter == 'overdue'
+			@gear_items = GearItem.overdue
+			@label = 'Overdue inventory'
+    elsif @filter == 'retired'
+      @gear_items = GearItem.retired
+      @label = 'Retired inventory'
+		else
+			@gear_items = GearItem.all	
+			@label = 'Entire inventory'
+		end
+	end
 
 	def line_gear_item?(line)
 		cols = line.split(',')

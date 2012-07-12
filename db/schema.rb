@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425040020) do
+ActiveRecord::Schema.define(:version => 20120712043012) do
 
   create_table "access", :primary_key => "aid", :force => true do |t|
     t.string  "mask",                :default => "", :null => false
@@ -843,6 +843,7 @@ ActiveRecord::Schema.define(:version => 20120425040020) do
     t.datetime "retired"
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
+    t.boolean  "broken",            :default => false
   end
 
   create_table "gs3_ledgers", :force => true do |t|
