@@ -14,7 +14,15 @@ class GearItemsController < ApplicationController
 	def set_missing
 		@type = params[:type]
 		GearItem.update_all({:missing => true}, {:gear_item_type_id => @type})
-		redirect_to gear_items_path(:type => @type)
+		redirect_to gear_items_path(:filter => params[:filter], :data => params[:data])
+	end
+
+	def duplicate
+		item = GearItem.find(params[:id])
+		new_item = item.dup
+		new_item.identifier = new_item.gear_item_type.new_identifier
+		new_item.save
+		redirect_to gear_items_path(:filter => params[:filter], :data => params[:data])
 	end
 
 	def update_missing

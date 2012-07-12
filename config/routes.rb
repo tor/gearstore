@@ -10,6 +10,9 @@ Gs2::Application.routes.draw do
 	resources :gear_item_notes 
   resources :gear_item_types
 	resources :gear_items do
+		member do
+			get 'duplicate'
+		end
 		collection do
 			get 'import'
 			post 'update_missing'

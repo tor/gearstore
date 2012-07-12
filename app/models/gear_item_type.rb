@@ -9,6 +9,15 @@ class GearItemType < ActiveRecord::Base
 		self.all_sorted.reject{|git| !git.some_available?}
 	end
 
+	def new_identifier
+		(1..10000).each do |i|
+			if not GearItem.find_by_identifier(i, :conditions => {:gear_item_type_id => id})
+				return i
+			end
+		end
+		return nil
+	end
+
 	def available_gear_items
     case sort_type
       when 'description'

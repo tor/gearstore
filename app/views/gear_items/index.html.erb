@@ -45,7 +45,7 @@
 			<td>
 				<%= check_box_tag "broken[#{g.id}]", true, g.broken %>
 			</td>
-			<td><%=link_to 'more', gear_item_path(g) %></td>
+			<td><%=link_to 'more', gear_item_path(g) %> | <%= link_to 'duplicate', duplicate_gear_item_path(g, :filter => params[:filter], :data => params[:data]) %></td>
 		</tr>
 	<% end %>
 </tbody>
