@@ -6,6 +6,7 @@
 		<li><%=link_to 'rented items', gear_items_path(:filter => 'rented') %> </li>
 		<li><%=link_to 'overdue items', gear_items_path(:filter => 'overdue') %></li>
     <li><%=link_to 'retired items', gear_items_path(:filter => 'retired') %></li>
+		<li><%=link_to 'export inventory', export_gear_items_path %></li>
 	</ul>
 	<%= form_tag gear_items_path, :method => 'get' do %>
 		<p>
