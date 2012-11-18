@@ -15,6 +15,7 @@ Gs2::Application.routes.draw do
 		end
 		collection do
 			get 'import'
+			get 'export'
 			post 'update_missing'
 			post 'set_missing'
 			post 'run_import'

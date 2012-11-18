@@ -81,6 +81,19 @@ class GearItemsController < ApplicationController
 		redirect_to gear_items_path
 	end
 
+
+	def export
+		filename = '/tmp/inventory.txt'
+		f = File.new(filename, 'w')
+		f.write("TYPE\tIDENTIFIER\tDESCRIPTION\tSIZE\tVALUE\tCONDITION\tYEAR_PURCHASED\tMISSING\tBROKEN\n")
+		GearItem.all.each do |gi|
+			f.write("#{gi.gear_item_type.name}\t#{gi.identifier}\t#{gi.description}\t#{gi.size}\t#{gi.value}\t#{gi.condition}\t#{gi.year_purchased}\t#{gi.missing}\t#{gi.broken}\n")
+		end
+		f.close
+
+    send_data File.read(filename), :filename => "inventory.txt"
+	end
+
 	protected
 
 	def get_display
