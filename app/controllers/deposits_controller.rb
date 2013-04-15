@@ -6,7 +6,6 @@ class DepositsController < ApplicationController
 			@users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
 			@label = "Deposits for \"#{params[:search]}\""
 		else
-#			@users = User.find(:all).reject{|u| u.deposit_amount == 0}
       @users = Deposit.find(:all, :conditions => ['amount != 0']).map{|d| d.user}
 			@label = "Deposits"
 		end

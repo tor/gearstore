@@ -18,8 +18,10 @@
 		<td><%=user.rentals.reject{|r| !r.active?}.size %></td>
 		<td><%=user.rentals.reject{|r| !r.overdue?}.size %></td>
 		<td>
-			<%=link_to 'return', deposit_path(user.deposit)%> |
-			<%=link_to 'claim', claim_deposit_path(user.deposit.id) %>
+      <% if user.deposit_amount > 0 %>
+  			<%=link_to 'return', deposits_path(user.deposit)%> |
+  			<%=link_to 'claim', claim_deposit_path(user.deposit) %>
+      <% end %>
 	</tr>
 <% end %>
 </table>
