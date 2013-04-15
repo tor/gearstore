@@ -680,3 +680,497 @@ ActionController::RoutingError (No route matches [GET] "/assets/logo-61ec79a0dca
   /usr/share/ruby-rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
 
 
+Compiled jquery.js  (3ms)  (pid 5421)
+Compiled jquery_ujs.js  (0ms)  (pid 5421)
+Compiled jquery-ui.js  (0ms)  (pid 5421)
+Compiled jquery-tablesorter.js  (2ms)  (pid 5421)
+Compiled jquery-multiselect.js  (0ms)  (pid 5421)
+Compiled jquery-tools.js  (0ms)  (pid 5421)
+Compiled application.js  (86ms)  (pid 5421)
+Compiled deposits.css  (11ms)  (pid 5421)
+Compiled gear_item_notes.css  (1ms)  (pid 5421)
+Compiled gear_item_types.css  (1ms)  (pid 5421)
+Compiled gear_items.css  (1ms)  (pid 5421)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 5421)
+Compiled ledgers.css  (1ms)  (pid 5421)
+Compiled rentals.css  (1ms)  (pid 5421)
+Compiled sessions.css  (1ms)  (pid 5421)
+Compiled styles.css  (0ms)  (pid 5421)
+Compiled application.css  (74ms)  (pid 5421)
+Compiled jquery.js  (4ms)  (pid 6227)
+Compiled jquery_ujs.js  (0ms)  (pid 6227)
+Compiled jquery-ui.js  (0ms)  (pid 6227)
+Compiled jquery-tablesorter.js  (2ms)  (pid 6227)
+Compiled jquery-multiselect.js  (0ms)  (pid 6227)
+Compiled jquery-tools.js  (0ms)  (pid 6227)
+Compiled application.js  (92ms)  (pid 6227)
+Compiled deposits.css  (14ms)  (pid 6227)
+Compiled gear_item_notes.css  (2ms)  (pid 6227)
+Compiled gear_item_types.css  (2ms)  (pid 6227)
+Compiled gear_items.css  (2ms)  (pid 6227)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 6227)
+Compiled ledgers.css  (2ms)  (pid 6227)
+Compiled rentals.css  (1ms)  (pid 6227)
+Compiled sessions.css  (2ms)  (pid 6227)
+Compiled styles.css  (0ms)  (pid 6227)
+Compiled application.css  (142ms)  (pid 6227)
+Compiled jquery.js  (4ms)  (pid 6771)
+Compiled jquery_ujs.js  (0ms)  (pid 6771)
+Compiled jquery-ui.js  (0ms)  (pid 6771)
+Compiled jquery-tablesorter.js  (2ms)  (pid 6771)
+Compiled jquery-multiselect.js  (0ms)  (pid 6771)
+Compiled jquery-tools.js  (0ms)  (pid 6771)
+Compiled jquery_nested_form.js  (0ms)  (pid 6771)
+Compiled application.js  (91ms)  (pid 6771)
+Compiled deposits.css  (19ms)  (pid 6771)
+Compiled gear_item_notes.css  (1ms)  (pid 6771)
+Compiled gear_item_types.css  (1ms)  (pid 6771)
+Compiled gear_items.css  (1ms)  (pid 6771)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 6771)
+Compiled ledgers.css  (1ms)  (pid 6771)
+Compiled rentals.css  (2ms)  (pid 6771)
+Compiled sessions.css  (1ms)  (pid 6771)
+Compiled styles.css  (0ms)  (pid 6771)
+Compiled application.css  (119ms)  (pid 6771)
+Compiled jquery.js  (4ms)  (pid 7063)
+Compiled jquery_ujs.js  (0ms)  (pid 7063)
+Compiled jquery-ui.js  (0ms)  (pid 7063)
+Compiled jquery-tablesorter.js  (2ms)  (pid 7063)
+Compiled jquery-multiselect.js  (0ms)  (pid 7063)
+Compiled jquery-tools.js  (0ms)  (pid 7063)
+Compiled jquery_nested_form.js  (0ms)  (pid 7063)
+Compiled application.js  (93ms)  (pid 7063)
+Compiled deposits.css  (10ms)  (pid 7063)
+Compiled gear_item_notes.css  (1ms)  (pid 7063)
+Compiled gear_item_types.css  (1ms)  (pid 7063)
+Compiled gear_items.css  (1ms)  (pid 7063)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 7063)
+Compiled ledgers.css  (2ms)  (pid 7063)
+Compiled rentals.css  (1ms)  (pid 7063)
+Compiled sessions.css  (1ms)  (pid 7063)
+Compiled styles.css  (0ms)  (pid 7063)
+Compiled application.css  (109ms)  (pid 7063)
+foobar
+Compiled jquery.js  (5ms)  (pid 8948)
+Compiled jquery_ujs.js  (0ms)  (pid 8948)
+Compiled jquery-ui.js  (0ms)  (pid 8948)
+Compiled jquery-tablesorter.js  (3ms)  (pid 8948)
+Compiled jquery-multiselect.js  (1ms)  (pid 8948)
+Compiled jquery-tools.js  (0ms)  (pid 8948)
+Compiled jquery_nested_form.js  (0ms)  (pid 8948)
+Compiled application.js  (104ms)  (pid 8948)
+Compiled deposits.css  (19ms)  (pid 8948)
+Compiled gear_item_notes.css  (1ms)  (pid 8948)
+Compiled gear_item_types.css  (1ms)  (pid 8948)
+Compiled gear_items.css  (1ms)  (pid 8948)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 8948)
+Compiled ledgers.css  (2ms)  (pid 8948)
+Compiled rentals.css  (1ms)  (pid 8948)
+Compiled sessions.css  (1ms)  (pid 8948)
+Compiled styles.css  (0ms)  (pid 8948)
+Compiled application.css  (118ms)  (pid 8948)
+Compiled jquery.js  (4ms)  (pid 9571)
+Compiled jquery_ujs.js  (0ms)  (pid 9571)
+Compiled jquery-ui.js  (0ms)  (pid 9571)
+Compiled jquery-tablesorter.js  (3ms)  (pid 9571)
+Compiled jquery-multiselect.js  (0ms)  (pid 9571)
+Compiled jquery-tools.js  (0ms)  (pid 9571)
+Compiled jquery_nested_form.js  (0ms)  (pid 9571)
+Compiled application.js  (91ms)  (pid 9571)
+Compiled deposits.css  (10ms)  (pid 9571)
+Compiled gear_item_notes.css  (1ms)  (pid 9571)
+Compiled gear_item_types.css  (1ms)  (pid 9571)
+Compiled gear_items.css  (1ms)  (pid 9571)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 9571)
+Compiled ledgers.css  (1ms)  (pid 9571)
+Compiled rentals.css  (1ms)  (pid 9571)
+Compiled sessions.css  (2ms)  (pid 9571)
+Compiled styles.css  (0ms)  (pid 9571)
+Compiled application.css  (111ms)  (pid 9571)
+Compiled jquery.js  (4ms)  (pid 10525)
+Compiled jquery_ujs.js  (0ms)  (pid 10525)
+Compiled jquery-ui.js  (0ms)  (pid 10525)
+Compiled jquery-tablesorter.js  (3ms)  (pid 10525)
+Compiled jquery-multiselect.js  (1ms)  (pid 10525)
+Compiled jquery-tools.js  (0ms)  (pid 10525)
+Compiled jquery_nested_form.js  (0ms)  (pid 10525)
+Compiled application.js  (118ms)  (pid 10525)
+Compiled deposits.css  (12ms)  (pid 10525)
+Compiled gear_item_notes.css  (1ms)  (pid 10525)
+Compiled gear_item_types.css  (2ms)  (pid 10525)
+Compiled gear_items.css  (2ms)  (pid 10525)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 10525)
+Compiled ledgers.css  (1ms)  (pid 10525)
+Compiled rentals.css  (1ms)  (pid 10525)
+Compiled sessions.css  (1ms)  (pid 10525)
+Compiled styles.css  (0ms)  (pid 10525)
+Compiled application.css  (126ms)  (pid 10525)
+Compiled jquery.js  (3ms)  (pid 12404)
+Compiled jquery_ujs.js  (0ms)  (pid 12404)
+Compiled jquery-ui.js  (0ms)  (pid 12404)
+Compiled jquery-tablesorter.js  (3ms)  (pid 12404)
+Compiled jquery-multiselect.js  (0ms)  (pid 12404)
+Compiled jquery-tools.js  (0ms)  (pid 12404)
+Compiled jquery_nested_form.js  (0ms)  (pid 12404)
+Compiled application.js  (95ms)  (pid 12404)
+Compiled deposits.css  (52ms)  (pid 12404)
+Compiled gear_item_notes.css  (2ms)  (pid 12404)
+Compiled gear_item_types.css  (1ms)  (pid 12404)
+Compiled gear_items.css  (1ms)  (pid 12404)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 12404)
+Compiled ledgers.css  (2ms)  (pid 12404)
+Compiled rentals.css  (1ms)  (pid 12404)
+Compiled sessions.css  (1ms)  (pid 12404)
+Compiled styles.css  (0ms)  (pid 12404)
+Compiled application.css  (126ms)  (pid 12404)
+Compiled jquery.js  (4ms)  (pid 12549)
+Compiled jquery_ujs.js  (0ms)  (pid 12549)
+Compiled jquery-ui.js  (0ms)  (pid 12549)
+Compiled jquery-tablesorter.js  (2ms)  (pid 12549)
+Compiled jquery-multiselect.js  (0ms)  (pid 12549)
+Compiled jquery-tools.js  (0ms)  (pid 12549)
+Compiled jquery_nested_form.js  (0ms)  (pid 12549)
+Compiled application.js  (65ms)  (pid 12549)
+Compiled deposits.css  (10ms)  (pid 12549)
+Compiled gear_item_notes.css  (1ms)  (pid 12549)
+Compiled gear_item_types.css  (1ms)  (pid 12549)
+Compiled gear_items.css  (1ms)  (pid 12549)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 12549)
+Compiled ledgers.css  (1ms)  (pid 12549)
+Compiled rentals.css  (1ms)  (pid 12549)
+Compiled sessions.css  (1ms)  (pid 12549)
+Compiled styles.css  (0ms)  (pid 12549)
+Compiled application.css  (104ms)  (pid 12549)
+Compiled jquery.js  (3ms)  (pid 12644)
+Compiled jquery_ujs.js  (0ms)  (pid 12644)
+Compiled jquery-ui.js  (0ms)  (pid 12644)
+Compiled jquery-tablesorter.js  (2ms)  (pid 12644)
+Compiled jquery-multiselect.js  (0ms)  (pid 12644)
+Compiled jquery-tools.js  (0ms)  (pid 12644)
+Compiled jquery_nested_form.js  (0ms)  (pid 12644)
+Compiled application.js  (87ms)  (pid 12644)
+Compiled deposits.css  (45ms)  (pid 12644)
+Compiled gear_item_notes.css  (1ms)  (pid 12644)
+Compiled gear_item_types.css  (1ms)  (pid 12644)
+Compiled gear_items.css  (1ms)  (pid 12644)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 12644)
+Compiled ledgers.css  (1ms)  (pid 12644)
+Compiled rentals.css  (1ms)  (pid 12644)
+Compiled sessions.css  (1ms)  (pid 12644)
+Compiled styles.css  (0ms)  (pid 12644)
+Compiled application.css  (106ms)  (pid 12644)
+
+
+Started GET "/" for 110.175.254.75 at 2013-04-15 23:01:34 +1000
+Processing by RentalsController#index as HTML
+  Rendered rentals/index.html.erb within layouts/rentals (75.0ms)
+  Rendered layouts/application.html.erb (5.4ms)
+Completed 200 OK in 379ms (Views: 135.1ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/assets/application-8c1165a5a2a596243d9d48d0ec39191d.css" for 110.175.254.75 at 2013-04-15 23:01:35 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c1165a5a2a596243d9d48d0ec39191d.css"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/assets/application-67428b3935a4a856687406ded6f36538.js" for 110.175.254.75 at 2013-04-15 23:01:35 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-67428b3935a4a856687406ded6f36538.js"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/assets/logo-33df530743312b07c99e432d6cbc1c5c.png" for 110.175.254.75 at 2013-04-15 23:01:35 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo-33df530743312b07c99e432d6cbc1c5c.png"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/favicon.ico" for 110.175.254.75 at 2013-04-15 23:01:36 +1000
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/rentals?utf8=%E2%9C%93&search_new=lattimore" for 110.175.254.75 at 2013-04-15 23:01:41 +1000
+Processing by RentalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search_new"=>"lattimore"}
+  Rendered rentals/index.html.erb within layouts/rentals (10.8ms)
+  Rendered layouts/application.html.erb (4.7ms)
+Completed 200 OK in 53ms (Views: 19.3ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/assets/application-8c1165a5a2a596243d9d48d0ec39191d.css" for 110.175.254.75 at 2013-04-15 23:01:41 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-8c1165a5a2a596243d9d48d0ec39191d.css"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/assets/application-67428b3935a4a856687406ded6f36538.js" for 110.175.254.75 at 2013-04-15 23:01:41 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/application-67428b3935a4a856687406ded6f36538.js"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/assets/logo-33df530743312b07c99e432d6cbc1c5c.png" for 110.175.254.75 at 2013-04-15 23:01:42 +1000
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo-33df530743312b07c99e432d6cbc1c5c.png"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/favicon.ico" for 110.175.254.75 at 2013-04-15 23:01:42 +1000
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/rentals/new?user_id=1851" for 110.175.254.75 at 2013-04-15 23:01:43 +1000
+Processing by RentalsController#new as HTML
+  Parameters: {"user_id"=>"1851"}
+  Rendered rentals/_form.html.erb (3105.1ms)
+  Rendered rentals/new.html.erb within layouts/rentals (3118.7ms)
+Completed 500 Internal Server Error in 3520ms
+
+ActionView::Template::Error (undefined method `nested_form_for' for #<#<Class:0xb5018348>:0xb4711038>):
+    9: </p>
+    10: 
+    11: 
+    12: <%= nested_form_for @rental do |f| %>
+    13: 	<%=f.hidden_field :user_id %>
+    14: 	<div class="long_col_dark">item type</div><div class="long_col_dark">item</div><div class="col_dark">fee ($)</div><div class="long_col_dark">deposit ($)</div>
+    15: 	<div class="clear">
+  app/views/rentals/_form.html.erb:12:in `_app_views_rentals__form_html_erb___315330729__633904398'
+  app/views/rentals/new.html.erb:3:in `_app_views_rentals_new_html_erb__413644261__633830858'
+
+
+
+
+Started GET "/favicon.ico" for 110.175.254.75 at 2013-04-15 23:01:47 +1000
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:26:in `call_app'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/logger.rb:16:in `call'
+  vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.0/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+  vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/engine.rb:479:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/application.rb:220:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/railties-3.2.0/lib/rails/rack/log_tailer.rb:14:in `call'
+  vendor/bundle/ruby/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/tor/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Compiled jquery.js  (3ms)  (pid 13239)
+Compiled jquery_nested_form.js  (0ms)  (pid 13239)
+Compiled jquery_ujs.js  (0ms)  (pid 13239)
+Compiled jquery-ui.js  (0ms)  (pid 13239)
+Compiled jquery-tablesorter.js  (2ms)  (pid 13239)
+Compiled jquery-multiselect.js  (1ms)  (pid 13239)
+Compiled jquery-tools.js  (0ms)  (pid 13239)
+Compiled application.js  (101ms)  (pid 13239)
+Compiled deposits.css  (55ms)  (pid 13239)
+Compiled gear_item_notes.css  (2ms)  (pid 13239)
+Compiled gear_item_types.css  (1ms)  (pid 13239)
+Compiled gear_items.css  (1ms)  (pid 13239)
+Compiled jquery-ui-1.8.16.custom.css  (0ms)  (pid 13239)
+Compiled ledgers.css  (1ms)  (pid 13239)
+Compiled rentals.css  (2ms)  (pid 13239)
+Compiled sessions.css  (1ms)  (pid 13239)
+Compiled styles.css  (0ms)  (pid 13239)
+Compiled application.css  (131ms)  (pid 13239)

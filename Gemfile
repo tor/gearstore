@@ -15,7 +15,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 #  gem 'nested_form'
-  gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -24,6 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'nested_form', :git => "git://github.com/ryanb/nested_form.git"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
