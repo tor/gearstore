@@ -11,7 +11,7 @@ To update and redeploy follow the following steps:
   git pull
   bundle install
   RAILS_ENV=production rake db:migrate
-  RAILS_ENV=production rake assetts:precompile
+  RAILS_ENV=production rake assets:precompile
   touch tmp/restart
 
 == Description of Contents
