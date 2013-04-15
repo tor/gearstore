@@ -1,9 +1,9 @@
 <% content_for :menu do %>
 <ul>
-	<li><%= link_to 'today', 			ledger_path(:from => 'today') %></li>
-	<li><%= link_to 'this week', 	ledger_path(:from => 'week') %></li>
-	<li><%= link_to 'this month', ledger_path(:from => 'month') %></li>
-	<li><%= link_to 'all', 				ledger_path(:from => 'all') %></li>
+	<li><%= link_to 'today', 			ledgers_path(:from => 'today') %></li>
+	<li><%= link_to 'this week', 	ledgers_path(:from => 'week') %></li>
+	<li><%= link_to 'this month', ledgers_path(:from => 'month') %></li>
+	<li><%= link_to 'all', 				ledgers_path(:from => 'all') %></li>
   <li><%= link_to_function 'manual payment', "$('#manual').show(300)" %></li>
   <li><%= link_to_function 'reconcile', "$('#reconcile').show(300)" %></li>
 </ul>
