@@ -22,17 +22,27 @@
 </div>
 
 
+<h4>Totals</h4>
+<table class="data">
+  <tr><th>deposited today</th><td>$<%=Ledger.deposits_taken_today%></td></tr>
+  <tr><th>fees taken today</th><td>$<%=Ledger.fees_taken_today%></td></tr>
+  <tr><th>deposits returned today</th><td>$<%=Ledger.deposits_returned_today%></td></tr>
+</table>
+<p>
+
+<h4>Individual</h4>
 <table class="data" id="ledger">
 <thead>
   <tr>
     <th>date</th>
     <th>approver</th>
-    <td>customer</th>
+    <th>customer</th>
     <th>description</th>
     <th>amount</th>
     <th>tally</th>
   </tr>
 </thead>
+
 
 
 <% tally = @balance %>
