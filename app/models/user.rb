@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
 	def has_overdue?
 		overdue_rental_number > 0 
 	end
+
+  def has_active?
+		rentals.reject{|r| !r.active?}.size > 0
+  end
 end
