@@ -12,9 +12,9 @@
 //
 
 //= require jquery
+//= require jquery_nested_form
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-tablesorter
 //= require jquery-multiselect
 //= require jquery-tools
-//= require jquery_nested_form
