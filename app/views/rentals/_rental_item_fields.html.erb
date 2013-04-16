@@ -2,7 +2,7 @@
 
 <div class="long_col">
 <%=select_tag(:gear_item_type_id, 
-							options_from_collection_for_select(GearItemType.all, 
+							options_from_collection_for_select(GearItemType.all_sorted, 
 																									:id, 
 																									:name, 
 																									(f.object.gear_item)?(f.object.gear_item.gear_item_type_id):nil), 
