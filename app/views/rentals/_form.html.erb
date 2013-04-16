@@ -119,7 +119,7 @@ $('#club_trip').change(function() {
 	update_total_costs();
 });
 
-$('select.watch').live('change', function(event) {
+$(document).on('change','select.watch', function(event) {
 	var val = $(this).val();
 	$(this).parents('div.rental_item_form:first').find('select.update').html(options_lookup[val]);
 
