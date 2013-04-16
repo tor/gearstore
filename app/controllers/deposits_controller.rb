@@ -24,13 +24,13 @@ class DepositsController < ApplicationController
 		if !params[:return_amount].blank? and params[:return_amount].to_i <= @deposit.amount
 			@deposit.update_attributes(:amount => @deposit.amount - params[:return_amount].to_i)
 			Ledger.create!(:amount => -params[:return_amount].to_i, :description => "deposit returned to #{@deposit.user.name}", :approver_id => params[:approver_id]) 
-			redirect_to deposit_path(:id => nil)
+			redirect_to deposits_path
 		elsif !params[:claim_amount].blank? and params[:claim_amount].to_i <= @deposit.amount
 			@deposit.update_attributes(:amount => @deposit.amount - params[:claim_amount].to_i)
-			Ledger.create!(:amount => 0, :description => "deposit reclaimed from #{@deposit.user.name}", :approver_id => params[:approver_id]) 
-			redirect_to deposit_path(:id => nil)
+			Ledger.create!(:amount => params[:claim_amount].to_i, :description => "deposit reclaimed from #{@deposit.user.name}", :approver_id => params[:approver_id]) 
+			redirect_to deposits_path
 		else
-			redirect_to deposit_path()
+			redirect_to deposits_path
 		end
 	end
 end

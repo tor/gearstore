@@ -14,16 +14,14 @@ class LedgersController < ApplicationController
 
 	def index
 		@from = Time.now.beginning_of_day
-		case params[:from]
-			when 'week'
-				@from = Time.now.beginning_of_week
-			when 'month'
-				@from = Time.now.beginning_of_month
-			when 'all'
-				@from = Time.new("2000")
-		end
+		@to = Time.now
+
+		@from = params[:from] if params[:from]
+		@to = params[:to] if params[:to]
+
 		@balance = Ledger.balance_until(@from)
-		@entries = Ledger.where("created_at >= ?", @from) 
+		@entries = Ledger.where("created_at >= ? and created_at <= ?", @from, @to) 
+		@totals = Ledger.totals(@from, @to)
 
     @new = Ledger.new
 	end
