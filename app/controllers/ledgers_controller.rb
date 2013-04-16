@@ -16,8 +16,8 @@ class LedgersController < ApplicationController
 		@from = Time.now.beginning_of_day
 		@to = Time.now
 
-		@from = params[:from] if params[:from]
-		@to = params[:to] if params[:to]
+		@from = Time.parse(params[:from]) if params[:from]
+		@to = Time.parse(params[:to]) if params[:to]
 
 		if params[:custom_start]
 			@from = Time.new(params[:custom_start][:year].to_i, params[:custom_start][:month].to_i, params[:custom_start][:day].to_i)
