@@ -3,7 +3,8 @@ body {
   line-height: 1.1em;
   font: 0.9em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	line-height: 1.2em;
-	background-color: #fff;
+	background-color: #f5f5f5; 
+  padding: 0px;
 }
 
 h1,h2,h3 {
@@ -64,30 +65,33 @@ div.long_col_dark {
 }
 
 div.header {
-  float:left;
-  width: 80%;
-  margin-left: -5px;
+  width: 100%;
   margin-bottom: 10px;
+  background-color: black;
+  padding: 5px;
+  margin: 0px;
 }
 
+
 div.header a {
-  display: block;
   margin-right: 40px;
-  float: left;
+  color: #aaa;
+  font-weight: bold;
+}
+
+div.header a:hover {
+  color: white;
 }
 
 div.menu {
-	float: left;
-	width: 15%;
+	float: right;
+	width: 10%;
 	padding: 5px;
 	margin: 0px;
-	background-color: white;
-/*	background-color: #ffc;*/
+  color: white;
 }
 
 div.submenu {
-  border-top: solid gray 1px;
-  width: 80%;
 }
 
 div.login {
@@ -103,11 +107,8 @@ div.login {
 
 div.container {
 	float: left;
-	width: 80%;
+	width: 85%;
 	margin-left: -5px;
-	background-color: #f5f5f5; 
-/*	background-color: #FF33D6;*/
-	border-top: solid black 1px;
 	padding: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;

@@ -9,17 +9,6 @@
 <body>
 
 <% if session[:user_id] %>
-
-
-  <div class="menu">
-   	<p><%= image_tag 'logo.png', :width => '160px' %></p>
-
-
-    <div class="submenu">
-  	<%= yield :menu %>
-    </div>
-  	
-  </div>
   <div class="header">
     
  		<%= link_to 'Ledger', ledgers_path %>
@@ -35,6 +24,18 @@
    	<%= link_to 'Logout', logout_path %>
 
   </div>
+
+
+  <div class="menu">
+   	<p><%= image_tag 'logo.png', :width => '160px' %></p>
+
+    <div class="submenu">
+  	<%= yield :menu %>
+    </div>
+  	
+  </div>
+
+
   <div class="container">
   	<%= yield %>
   </div>
