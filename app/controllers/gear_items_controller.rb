@@ -12,7 +12,7 @@ class GearItemsController < ApplicationController
   end
 	
 	def set_missing
-		@type = params[:type]
+		@type = params[:data].to_i
 		GearItem.update_all({:missing => true}, {:gear_item_type_id => @type})
 		redirect_to gear_items_path(:filter => params[:filter], :data => params[:data])
 	end
