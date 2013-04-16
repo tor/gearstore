@@ -19,6 +19,11 @@ class LedgersController < ApplicationController
 		@from = params[:from] if params[:from]
 		@to = params[:to] if params[:to]
 
+		if params[:custom_start]
+			@from = Time.new(params[:custom_start][:year].to_i, params[:custom_start][:month].to_i, params[:custom_start][:day].to_i)
+			@to = Time.new(params[:custom_end][:year].to_i, params[:custom_end][:month].to_i, params[:custom_end][:day].to_i)
+		end
+
 		@balance = Ledger.balance_until(@from)
 		@entries = Ledger.where("created_at >= ? and created_at <= ?", @from, @to) 
 		@totals = Ledger.totals(@from, @to)

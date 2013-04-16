@@ -4,9 +4,11 @@
 	<li><%= link_to 'this week', 	ledgers_path(:from => Time.now.beginning_of_week) %></li>
 	<li><%= link_to 'this month', ledgers_path(:from => Time.now.beginning_of_month) %></li>
 	<li><%= link_to 'all', 				ledgers_path(:from => Time.new(2000)) %></li>
+  <li><%= link_to_function 'custom range', "$('#custom').show(300)" %></li>
   <li><%= link_to_function 'manual payment', "$('#manual').show(300)" %></li>
   <li><%= link_to_function 'reconcile', "$('#reconcile').show(300)" %></li>
 </ul>
+
 
 <% end %>
 
