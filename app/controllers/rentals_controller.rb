@@ -139,7 +139,7 @@ class RentalsController < ApplicationController
 		Ledger.create! :amount => r.deposit, 	:description => 'deposit',  :approver_id => r.approver_id, :user_id => user.id
 		Ledger.create! :amount => r.fee, 			:description => 'fee',      :approver_id => r.approver_id, :user_id => user.id
 
-		redirect_to rental_path
+		redirect_to rentals_path
 	end
 
 	def show

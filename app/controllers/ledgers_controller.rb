@@ -7,6 +7,15 @@ class LedgersController < ApplicationController
     if params[:reconcile]
       @entry.amount = @entry.amount - Ledger.balance_until(Time.now)
       @entry.description = 'reconcile: ' + @entry.description
+      if params[:description_auto] != 'custom'
+        @entry.description = 'reconcile: ' + params[:description_auto]
+      end
+    end
+    
+    if params[:manual]
+      if params[:description_auto] != 'custom'
+        @entry.description = params[:description_auto]
+      end
     end
     @entry.save
     redirect_to ledgers_path

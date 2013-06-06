@@ -5,6 +5,7 @@ class GearItem < ActiveRecord::Base
 	has_many :rental_items
 	has_many :gear_item_notes
 
+
 	def rented_to
 		return nil if not rented
 		rental_items.reject{|i| !i.returned_on.nil?}.first.rental.user

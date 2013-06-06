@@ -10,8 +10,10 @@
 <div id="manual" style="display: none">
   <h4>Manual Payment</h4>
   <%= form_for @new do |f| %>
+    <%=hidden_field_tag :manual, 'yes' %>
     <p><%=label_tag :amount,      'amount:' %><%= f.text_field :amount %></p>
-    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %></p>  
+    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %> or <%=select_tag :description_auto, options_for_select(['custom', 'trip fees', 'sales', 'rope fees', 'membership', 'confiscated deposit', 'ledger correction']) %>
+    </p>  
     <p><%=label_tag :approver,    'approver:' %> <%= f.collection_select :approver_id, User.admins, 'id', 'name' %></p>
     <p><%=submit_tag 'make payment', :class => 'button' %></p>
   <% end %>
@@ -22,7 +24,8 @@
   <%= form_for @new do |f| %>
     <%=hidden_field_tag :reconcile, 'yes' %>
     <p><%=label_tag :amount,      'true amount:' %><%= f.text_field :amount %></p>
-    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %></p>  
+    <p><%=label_tag :description, 'description:' %><%= f.text_field :description %> or <%=select_tag :description_auto, options_for_select(['custom', 'fee return', 'ledger correction']) %>
+    </p>  
     <p><%=label_tag :approver,    'approver:' %> <%= f.collection_select :approver_id, User.admins, 'id', 'name' %></p>
     <p><%=submit_tag 'reconcile', :class => 'button', :confirm => 'Are you sure you want to reconcile?' %></p>
   <% end %>
