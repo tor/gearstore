@@ -26,6 +26,8 @@ class GearItemType < ActiveRecord::Base
         GearItem.find(:all, :conditions => {:gear_item_type_id => id, :rented => false, :retired => nil}).sort{|x, y| x.identifier <=> y.identifier}
       when 'identifier (number)'
         GearItem.find(:all, :conditions => {:gear_item_type_id => id, :rented => false, :retired => nil}).sort{|x, y| x.identifier.to_i <=> y.identifier.to_i}
+			else
+        GearItem.find(:all, :conditions => {:gear_item_type_id => id, :rented => false, :retired => nil}).sort{|x, y| x.description <=> y.description}
     end
 	end
 
