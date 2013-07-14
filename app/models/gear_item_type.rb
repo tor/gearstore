@@ -1,5 +1,9 @@
 class GearItemType < ActiveRecord::Base
 	has_many :gear_items
+  
+  def self.all
+    GearItemType.find(:all, :conditions => {:deleted => false})
+  end
 
 	def self.all_sorted
 		self.all.sort{|x, y| x.name <=> y.name}
@@ -8,6 +12,13 @@ class GearItemType < ActiveRecord::Base
 	def self.all_available
 		self.all_sorted.reject{|git| !git.some_available?}
 	end
+
+  def retire
+    update_attribute(:deleted, true)
+    gear_items.each do |g|
+      g.retire 
+    end
+  end
 
 	def new_identifier
 		(1..10000).each do |i|

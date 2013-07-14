@@ -45,7 +45,7 @@ class GearItemsController < ApplicationController
 
   def destroy
     @gear_item = GearItem.find(params[:id])
-    @gear_item.update_attributes(:retired => Time.now)
+    @gear_item.retire
     redirect_to gear_items_path
   end
 	

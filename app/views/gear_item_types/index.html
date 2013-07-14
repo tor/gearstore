@@ -13,9 +13,7 @@
       <td><%=git.gear_items.size %></td>
       <td>
         <%= link_to 'edit', edit_gear_item_type_path(git) %>  
-        <% if git.gear_items.size == 0 %>
         | <%= link_to 'delete', gear_item_type_path(git), :method => 'delete', :confirm => 'are you sure?' %>
-        <% end %>
       </td>
 		</tr>
 	<% end %>

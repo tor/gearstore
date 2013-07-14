@@ -19,6 +19,10 @@ class GearItem < ActiveRecord::Base
 		"#{identifier} : #{clean_description}"	
 	end
 
+  def retire
+    update_attributes(:retired => Time.now)
+  end
+
 	def self.overdue
 		Rental.overdue.map{|rental| rental.rental_items.reject{|ri| ri.returned_on != nil}.map{|ri| ri.gear_item}}.flatten
 	end
