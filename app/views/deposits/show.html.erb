@@ -8,7 +8,7 @@
 <%= form_tag deposit_path(@deposit), :method => 'put' do %>
 <%= label_tag :return_amount, 'return amount:' %> <%= number_field_tag :return_amount, params[:return_amount] %>
 <p>
-<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> 
+<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(admins, :id, :name) %> 
 <p>
 <%= submit_tag 'update', :class => 'button' %>
 <% end %>

@@ -59,7 +59,7 @@ There is no history.
 <p>
 <%=f.hidden_field :gear_item_id %>
 <%=f.text_field :note %>
-<%=f.collection_select :approver_id, User.admins, 'id', 'name' %> <%=submit_tag 'add note' %>
+<%=f.collection_select :approver_id, admins, 'id', 'name' %> <%=submit_tag 'add note' %>
 </p>
 <% end %>
 
