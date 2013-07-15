@@ -2,6 +2,8 @@ Gs2::Application.routes.draw do
 	
 
   resources :sessions
+  resources :user_notes
+  resources :users
 	resources :rentals do
 		collection do
 			get 'download'

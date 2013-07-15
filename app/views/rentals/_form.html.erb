@@ -8,6 +8,24 @@
 
 </p>
 
+<% if @user.user_notes.size > 0 %>
+  User has some notes:
+  <table class="data">
+    <thead>
+      <tr>
+        <th>note</th>
+        <th>approver</th>
+      </tr>
+    </thead>
+    <% @user.user_notes.each do |note| %>
+      <tr>
+        <td><%=note.note %></td>
+        <td><%=note.approver.name %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<p>
 
 <%= nested_form_for @rental do |f| %>
 	<%=f.hidden_field :user_id %>
@@ -39,7 +57,7 @@
 	</p>
 	<p>
 		<%=label_tag :approver, 'approver:' %>
-		<%= f.collection_select :approver_id, User.admins, :id, :name %> 
+		<%= f.collection_select :approver_id, admins, :id, :name %> 
 
 		<%= f.submit 'Submit' %>
 	</p>

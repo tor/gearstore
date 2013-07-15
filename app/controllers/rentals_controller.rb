@@ -139,6 +139,9 @@ class RentalsController < ApplicationController
 		Ledger.create! :amount => r.deposit, 	:description => 'deposit',  :approver_id => r.approver_id, :user_id => user.id
 		Ledger.create! :amount => r.fee, 			:description => 'fee',      :approver_id => r.approver_id, :user_id => user.id
 
+    begin
+      RentalMailer.rental_mail(r).deliver
+    end
 		redirect_to rentals_path
 	end
 

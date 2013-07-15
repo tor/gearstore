@@ -1,6 +1,7 @@
 class GearItem < ActiveRecord::Base
   set_table_name 'gs3_gear_items'
 
+  default_scope :conditions => {:retired => nil}
 	belongs_to :gear_item_type
 	has_many :rental_items
 	has_many :gear_item_notes

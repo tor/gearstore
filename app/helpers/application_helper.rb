@@ -36,5 +36,8 @@ module ApplicationHelper
 			rental.return_on_pretty
 		end
 	end
-
+  
+  def admins
+    [User.find(session[:user_id])] + User.admins
+  end
 end

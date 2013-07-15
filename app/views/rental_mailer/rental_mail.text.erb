@@ -1,0 +1,14 @@
+Dear <%= @user.name %>
+
+This an automatic note recording your recent rental of some items from the ANUMC. Please ensure the items are returned on time.
+
+Have a safe and fun trip!
+
+Due to be returned on: <%= @rental.return_on.strftime("%Y %b %e") %> 
+
+Items:
+
+<% @rental.rental_items.each do |ri| %>
+* <%=ri.gear_item.gear_item_type.name.upcase %>: "<%=ri.gear_item.name%>"
+<% end %>
+

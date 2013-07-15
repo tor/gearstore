@@ -1,0 +1,40 @@
+<h3>User "<%=@user.name %>"</h3>
+
+<table class="data">
+<tr><th>name</th><td><%=@user.name %></td></tr>
+<tr><th>email</th><td><%=@user.mail %></td></tr>
+<tr><th>phone</th><td><%=@user.phone %></td></tr>
+<tr><th><%=link_to '#current rentals', rentals_path(:search => @user.name) %></th><td><%=@user.rental_number%></td></tr>
+<tr><th>#overdue rentals</th><td><%=@user.overdue_rental_number %></td></tr>
+</table>
+
+<h3>Notes</h3>
+<% if @user.user_notes.size == 0 %>
+  This user has no notes
+<% else %>
+<table class="data">
+  <thead>
+    <tr>
+      <th>note</th>
+      <th>approver</th>
+    </tr>
+  </thead>
+  <% @user.user_notes.each do |note| %>
+    <tr>
+      <td><%=note.note%></td>
+      <td><%=note.approver.name %></td>
+  <% end %>
+</table>
+<% end %>
+
+
+<h3>Add Note</h3>
+<%=form_for @note do |f| %>
+<p>
+<%=f.hidden_field :user_id %>
+<%=f.text_field :note %>
+<%=f.collection_select :approver_id, admins, 'id', 'name' %> <%=submit_tag 'add note' %>
+</p>
+<% end %>
+
+
