@@ -4,9 +4,11 @@
 <tr><th>name</th><td><%=@user.name %></td></tr>
 <tr><th>email</th><td><%=@user.mail %></td></tr>
 <tr><th>phone</th><td><%=@user.phone %></td></tr>
-<tr><th><%=link_to '#current rentals', rentals_path(:search => @user.name) %></th><td><%=@user.rental_number%></td></tr>
+<tr><th><%=link_to '#rentals', rentals_path(:search => @user.name) %></th><td><%=@user.rentals.count%></td></tr>
+<tr><th>#current rentals</th><td><%=@user.rental_number%></td></tr>
 <tr><th>#overdue rentals</th><td><%=@user.overdue_rental_number %></td></tr>
 </table>
+
 
 <h3>Notes</h3>
 <% if @user.user_notes.size == 0 %>

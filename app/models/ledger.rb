@@ -1,6 +1,24 @@
 class Ledger < ActiveRecord::Base
   belongs_to :user
 
+  def self.types
+    ['returns', 'deposit', 'fee', 'trip fees', 'sales', 'rope fees', 'membership', 'confiscated deposit', 'ledger correction', 'custom']
+  end
+
+  def self.type_names
+    { 'returns' => 'returns',
+      'deposit' => 'deposits taken',
+      'fee' => 'fees taken',
+      'trip fees' => 'trip fees',
+      'sales' => 'sales',
+      'rope fees' => 'rope fees',
+      'membership' => 'membership fees',
+      'confiscated deposit' => 'confiscated deposits',
+      'ledger correction' => 'ledger corrections',
+      'custom' => 'custom'
+    }
+  end
+
 	def self.balance_until time
 		Ledger.sum(:amount, :conditions => ['created_at <= ?', time])		
 	end
@@ -11,13 +29,12 @@ class Ledger < ActiveRecord::Base
 
 	def self.totals(s, e)
 		entries = Ledger.find(:all, :conditions => ['created_at >= ? and created_at <= ?', s, e])
-
-		return {
-			:fees => entries.reject{|e| e.description != 'fee'}.inject(0) {|t,e| t += e.amount},
-			:deposits => entries.reject{|e| e.description != 'deposit'}.inject(0) {|t,e| t += e.amount},
-			:returns => entries.reject{|e| e.description.match('deposit returned') == nil}.inject(0) {|t,e| t += e.amount},
-			:other => entries.reject{|e| e.description.match('deposit returned|fee') or e.description == 'deposit'}.inject(0) {|t,e| t+= e.amount}
-		}
+    
+    totals = types.inject({}) do |x, type|
+      x.merge(type => entries.reject{|e| e.description != type}.inject(0) {|t,e| t+=e.amount})
+    end
+    totals['returns'] = entries.reject{|e| e.description.match('deposit returned') == nil}.inject(0) {|t,e| t += e.amount}
+    return totals
 	end
 
   def self.fees_taken_today

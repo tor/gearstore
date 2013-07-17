@@ -34,10 +34,16 @@
 
 <h4>Totals</h4>
 <table class="data">
-  <tr><th>deposits taken</th><td>$<%=@totals[:deposits]%></td></tr>
-  <tr><th>deposits returned</th><td>$<%=@totals[:returns]%></td></tr>
-  <tr><th>fees taken</th><td>$<%=@totals[:fees]%></td></tr>
-  <tr><th>other payments</th><td>$<%=@totals[:other]%></td></tr>
+  <tr>
+  <% Ledger.types.each do |type| %> 
+    <th><%=Ledger.type_names[type]%></th>
+  <% end %>
+  </tr>
+  <tr>
+  <% Ledger.types.each do |type| %>
+    <td>$<%=@totals[type] %></td>
+  <% end %>
+  </tr>
 </table>
 <p>
 

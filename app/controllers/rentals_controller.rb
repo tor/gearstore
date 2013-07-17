@@ -115,10 +115,12 @@ class RentalsController < ApplicationController
 								:return_approver_id => params[:approver_id], 
 								:return_note => params['returned_note'][id],
 								:missing => (mis[id] != nil))
-				GearItemNote.create! 	:note => params['returned_note'][id], 
-															:rental_item_id => rental_item.id, 
-															:gear_item_id => rental_item.gear_item_id,
-															:approver_id => params[:approver_id]
+        if not params['returned_note'][id].blank?
+  				GearItemNote.create! 	:note => params['returned_note'][id], 
+  															:rental_item_id => rental_item.id, 
+  															:gear_item_id => rental_item.gear_item_id,
+  															:approver_id => params[:approver_id]
+        end
 	
 				if mis[id]
 					rental_item.gear_item.update_attributes(:missing => true)
