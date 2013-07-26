@@ -5,12 +5,19 @@ class RentalItem < ActiveRecord::Base
 
 	before_create :set_rented
 	after_update :set_rented
+  after_destroy :unrent
 	
 	def return_approver
 		User.find(return_approver_id)
 	end
 
+  def unrent
+    gear_item.update_attributes :rented => false
+    gear_item.save
+  end
+
 	def set_rented
+    puts 'SETTING RENTED STATUS!!!'
 		if returned_on
 			gear_item.update_attributes :rented => false
 		else
