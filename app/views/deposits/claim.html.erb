@@ -9,7 +9,7 @@
 <%= form_tag deposit_path(@deposit, :claim => true), :method => 'put' do %>
 <%= label_tag :claim_amount, 'claim amount:' %> <%= number_field_tag :claim_amount, params[:claim_amount] %>
 <p>
-<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> 
+<%= label_tag :approver, 'approver:' %> <%= select_tag :approver_id, options_from_collection_for_select(admins, :id, :name) %> 
 <p>
 <%= submit_tag 'update', :class => 'button' %>
 <% end %>

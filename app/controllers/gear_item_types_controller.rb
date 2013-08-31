@@ -23,8 +23,9 @@ class GearItemTypesController < ApplicationController
   end
 
   def destroy
-    @git = GearItemType.find(params[:id])
-    @git.destroy
+    git = GearItemType.find(params[:id])
+    git.retire
+    
     redirect_to gear_item_types_path
   end
 end

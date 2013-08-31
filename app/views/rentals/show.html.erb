@@ -49,7 +49,7 @@
 <% end %>
 </table>
 <p>
-<%= select_tag :approver_id, options_from_collection_for_select(User.admins, :id, :name) %> <%=submit_tag 'update' %>
+<%= select_tag :approver_id, options_from_collection_for_select(admins, :id, :name) %> <%=submit_tag 'update' %>
 </p>
 <% end %>
 

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   set_primary_key 'id'
 
 	has_many :rentals
+  has_many :user_notes
 	has_one :deposit
 
   has_and_belongs_to_many :roles

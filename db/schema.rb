@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712043012) do
+ActiveRecord::Schema.define(:version => 20130714235017) do
 
   create_table "access", :primary_key => "aid", :force => true do |t|
     t.string  "mask",                :default => "", :null => false
@@ -283,10 +283,6 @@ ActiveRecord::Schema.define(:version => 20120712043012) do
     t.integer "field_archived_0_value"
   end
 
-  create_table "content_type_forum", :primary_key => "vid", :force => true do |t|
-    t.integer "nid", :default => 0, :null => false
-  end
-
   create_table "content_type_general_trip", :primary_key => "vid", :force => true do |t|
     t.integer "nid", :default => 0, :null => false
   end
@@ -436,354 +432,6 @@ ActiveRecord::Schema.define(:version => 20120712043012) do
   add_index "forum", ["nid"], :name => "nid"
   add_index "forum", ["tid"], :name => "tid"
 
-  create_table "g2_AccessMap", :id => false, :force => true do |t|
-    t.integer "g_accessListId",  :null => false
-    t.integer "g_userOrGroupId", :null => false
-    t.integer "g_permission",    :null => false
-  end
-
-  add_index "g2_AccessMap", ["g_accessListId"], :name => "g2_AccessMap_83732"
-  add_index "g2_AccessMap", ["g_permission"], :name => "g2_AccessMap_18058"
-  add_index "g2_AccessMap", ["g_userOrGroupId"], :name => "g2_AccessMap_48775"
-
-  create_table "g2_AccessSubscriberMap", :primary_key => "g_itemId", :force => true do |t|
-    t.integer "g_accessListId", :null => false
-  end
-
-  add_index "g2_AccessSubscriberMap", ["g_accessListId"], :name => "g2_AccessSubscriberMap_83732"
-
-  create_table "g2_AlbumItem", :primary_key => "g_id", :force => true do |t|
-    t.string "g_theme",          :limit => 32
-    t.string "g_orderBy",        :limit => 128
-    t.string "g_orderDirection", :limit => 32
-  end
-
-  create_table "g2_AnimationItem", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_width"
-    t.integer "g_height"
-  end
-
-  create_table "g2_CacheMap", :id => false, :force => true do |t|
-    t.string  "g_key",       :limit => 32,         :null => false
-    t.text    "g_value",     :limit => 2147483647
-    t.integer "g_userId",                          :null => false
-    t.integer "g_itemId",                          :null => false
-    t.string  "g_type",      :limit => 32,         :null => false
-    t.integer "g_timestamp",                       :null => false
-    t.integer "g_isEmpty"
-  end
-
-  add_index "g2_CacheMap", ["g_itemId"], :name => "g2_CacheMap_75985"
-  add_index "g2_CacheMap", ["g_userId", "g_timestamp", "g_isEmpty"], :name => "g2_CacheMap_21979"
-
-  create_table "g2_ChildEntity", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_parentId", :null => false
-  end
-
-  add_index "g2_ChildEntity", ["g_parentId"], :name => "g2_ChildEntity_52718"
-
-  create_table "g2_DataItem", :primary_key => "g_id", :force => true do |t|
-    t.string  "g_mimeType", :limit => 128
-    t.integer "g_size"
-  end
-
-  create_table "g2_Derivative", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_derivativeSourceId",                  :null => false
-    t.string  "g_derivativeOperations"
-    t.integer "g_derivativeOrder",                     :null => false
-    t.integer "g_derivativeSize"
-    t.integer "g_derivativeType",                      :null => false
-    t.string  "g_mimeType",             :limit => 128, :null => false
-    t.string  "g_postFilterOperations"
-    t.integer "g_isBroken"
-  end
-
-  add_index "g2_Derivative", ["g_derivativeOrder"], :name => "g2_Derivative_25243"
-  add_index "g2_Derivative", ["g_derivativeSourceId"], :name => "g2_Derivative_85338"
-  add_index "g2_Derivative", ["g_derivativeType"], :name => "g2_Derivative_97216"
-
-  create_table "g2_DerivativeImage", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_width"
-    t.integer "g_height"
-  end
-
-  create_table "g2_DerivativePrefsMap", :id => false, :force => true do |t|
-    t.integer "g_itemId"
-    t.integer "g_order"
-    t.integer "g_derivativeType"
-    t.string  "g_derivativeOperations"
-  end
-
-  add_index "g2_DerivativePrefsMap", ["g_itemId"], :name => "g2_DerivativePrefsMap_75985"
-
-  create_table "g2_DescendentCountsMap", :id => false, :force => true do |t|
-    t.integer "g_userId",          :null => false
-    t.integer "g_itemId",          :null => false
-    t.integer "g_descendentCount", :null => false
-  end
-
-  create_table "g2_Entity", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_creationTimestamp",                    :null => false
-    t.integer "g_isLinkable",                           :null => false
-    t.integer "g_linkId"
-    t.integer "g_modificationTimestamp",                :null => false
-    t.integer "g_serialNumber",                         :null => false
-    t.string  "g_entityType",            :limit => 32,  :null => false
-    t.string  "g_onLoadHandlers",        :limit => 128
-  end
-
-  add_index "g2_Entity", ["g_creationTimestamp"], :name => "g2_Entity_76255"
-  add_index "g2_Entity", ["g_isLinkable"], :name => "g2_Entity_35978"
-  add_index "g2_Entity", ["g_linkId"], :name => "g2_Entity_44738"
-  add_index "g2_Entity", ["g_modificationTimestamp"], :name => "g2_Entity_63025"
-  add_index "g2_Entity", ["g_serialNumber"], :name => "g2_Entity_60702"
-
-  create_table "g2_ExternalIdMap", :id => false, :force => true do |t|
-    t.string  "g_externalId", :limit => 128, :null => false
-    t.string  "g_entityType", :limit => 32,  :null => false
-    t.integer "g_entityId",                  :null => false
-  end
-
-  create_table "g2_FactoryMap", :id => false, :force => true do |t|
-    t.string "g_classType",    :limit => 128
-    t.string "g_className",    :limit => 128
-    t.string "g_implId",       :limit => 128
-    t.string "g_implPath",     :limit => 128
-    t.string "g_implModuleId", :limit => 128
-    t.string "g_hints"
-    t.string "g_orderWeight"
-  end
-
-  create_table "g2_FailedLoginsMap", :primary_key => "g_userName", :force => true do |t|
-    t.integer "g_count",       :null => false
-    t.integer "g_lastAttempt", :null => false
-  end
-
-  create_table "g2_FileSystemEntity", :primary_key => "g_id", :force => true do |t|
-    t.string "g_pathComponent", :limit => 128
-  end
-
-  add_index "g2_FileSystemEntity", ["g_pathComponent"], :name => "g2_FileSystemEntity_3406"
-
-  create_table "g2_G1MigrateMap", :primary_key => "g_itemId", :force => true do |t|
-    t.string "g_g1album", :limit => 128, :null => false
-    t.string "g_g1item",  :limit => 128
-  end
-
-  add_index "g2_G1MigrateMap", ["g_g1album", "g_g1item"], :name => "g2_G1MigrateMap_41836"
-
-  create_table "g2_Group", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_groupType",                :null => false
-    t.string  "g_groupName", :limit => 128
-  end
-
-  add_index "g2_Group", ["g_groupName"], :name => "g_groupName", :unique => true
-
-  create_table "g2_ImageBlockCacheMap", :id => false, :force => true do |t|
-    t.integer "g_userId",        :null => false
-    t.integer "g_itemType",      :null => false
-    t.integer "g_itemTimestamp", :null => false
-    t.integer "g_itemId",        :null => false
-  end
-
-  add_index "g2_ImageBlockCacheMap", ["g_userId", "g_itemType"], :name => "g2_ImageBlockCacheMap_1627"
-
-  create_table "g2_ImageBlockDisabledMap", :primary_key => "g_itemId", :force => true do |t|
-  end
-
-  create_table "g2_Item", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_canContainChildren",                  :null => false
-    t.text    "g_description"
-    t.string  "g_keywords"
-    t.integer "g_ownerId",                             :null => false
-    t.string  "g_renderer",             :limit => 128
-    t.string  "g_summary"
-    t.string  "g_title",                :limit => 128
-    t.integer "g_viewedSinceTimestamp",                :null => false
-    t.integer "g_originationTimestamp",                :null => false
-  end
-
-  add_index "g2_Item", ["g_keywords"], :name => "g2_Item_99070"
-  add_index "g2_Item", ["g_ownerId"], :name => "g2_Item_21573"
-  add_index "g2_Item", ["g_summary"], :name => "g2_Item_54147"
-  add_index "g2_Item", ["g_title"], :name => "g2_Item_90059"
-
-  create_table "g2_ItemAttributesMap", :primary_key => "g_itemId", :force => true do |t|
-    t.integer "g_viewCount"
-    t.integer "g_orderWeight"
-    t.string  "g_parentSequence", :null => false
-  end
-
-  add_index "g2_ItemAttributesMap", ["g_parentSequence"], :name => "g2_ItemAttributesMap_95270"
-
-  create_table "g2_Lock", :id => false, :force => true do |t|
-    t.integer "g_lockId"
-    t.integer "g_readEntityId"
-    t.integer "g_writeEntityId"
-    t.integer "g_freshUntil"
-    t.integer "g_request"
-  end
-
-  add_index "g2_Lock", ["g_lockId"], :name => "g2_Lock_11039"
-
-  create_table "g2_MaintenanceMap", :primary_key => "g_runId", :force => true do |t|
-    t.string  "g_taskId",    :limit => 128, :null => false
-    t.integer "g_timestamp"
-    t.integer "g_success"
-    t.text    "g_details"
-  end
-
-  add_index "g2_MaintenanceMap", ["g_taskId"], :name => "g2_MaintenanceMap_21687"
-
-  create_table "g2_MimeTypeMap", :primary_key => "g_extension", :force => true do |t|
-    t.string  "g_mimeType", :limit => 32, :null => false
-    t.integer "g_viewable"
-  end
-
-  create_table "g2_MovieItem", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_width"
-    t.integer "g_height"
-    t.integer "g_duration"
-  end
-
-  create_table "g2_PermissionSetMap", :id => false, :force => true do |t|
-    t.string  "g_module",      :limit => 128, :null => false
-    t.string  "g_permission",  :limit => 128, :null => false
-    t.string  "g_description"
-    t.integer "g_bits",                       :null => false
-    t.integer "g_flags",                      :null => false
-  end
-
-  add_index "g2_PermissionSetMap", ["g_permission"], :name => "g_permission", :unique => true
-
-  create_table "g2_PhotoItem", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_width"
-    t.integer "g_height"
-  end
-
-  create_table "g2_PluginMap", :id => false, :force => true do |t|
-    t.string  "g_pluginType", :limit => 32, :null => false
-    t.string  "g_pluginId",   :limit => 32, :null => false
-    t.integer "g_active",                   :null => false
-  end
-
-  create_table "g2_PluginPackageMap", :id => false, :force => true do |t|
-    t.string  "g_pluginType",     :limit => 32, :null => false
-    t.string  "g_pluginId",       :limit => 32, :null => false
-    t.string  "g_packageName",    :limit => 32, :null => false
-    t.string  "g_packageVersion", :limit => 32, :null => false
-    t.string  "g_packageBuild",   :limit => 32, :null => false
-    t.integer "g_locked",                       :null => false
-  end
-
-  add_index "g2_PluginPackageMap", ["g_pluginType"], :name => "g2_PluginPackageMap_80596"
-
-  create_table "g2_PluginParameterMap", :id => false, :force => true do |t|
-    t.string  "g_pluginType",     :limit => 32,  :null => false
-    t.string  "g_pluginId",       :limit => 32,  :null => false
-    t.integer "g_itemId",                        :null => false
-    t.string  "g_parameterName",  :limit => 128, :null => false
-    t.text    "g_parameterValue",                :null => false
-  end
-
-  add_index "g2_PluginParameterMap", ["g_pluginType", "g_pluginId", "g_itemId", "g_parameterName"], :name => "g_pluginType", :unique => true
-  add_index "g2_PluginParameterMap", ["g_pluginType", "g_pluginId", "g_itemId"], :name => "g2_PluginParameterMap_12808"
-  add_index "g2_PluginParameterMap", ["g_pluginType"], :name => "g2_PluginParameterMap_80596"
-
-  create_table "g2_RecoverPasswordMap", :primary_key => "g_userName", :force => true do |t|
-    t.string  "g_authString",     :limit => 32, :null => false
-    t.integer "g_requestExpires",               :null => false
-  end
-
-  create_table "g2_Schema", :primary_key => "g_name", :force => true do |t|
-    t.integer "g_major",                   :null => false
-    t.integer "g_minor",                   :null => false
-    t.text    "g_createSql"
-    t.string  "g_pluginId",  :limit => 32
-    t.string  "g_type",      :limit => 32
-    t.text    "g_info"
-  end
-
-  create_table "g2_SequenceId", :id => false, :force => true do |t|
-    t.integer "id", :null => false
-  end
-
-  create_table "g2_SequenceLock", :id => false, :force => true do |t|
-    t.integer "id", :null => false
-  end
-
-  create_table "g2_SessionMap", :primary_key => "g_id", :force => true do |t|
-    t.integer "g_userId",                                      :null => false
-    t.string  "g_remoteIdentifier",      :limit => 128,        :null => false
-    t.integer "g_creationTimestamp",                           :null => false
-    t.integer "g_modificationTimestamp",                       :null => false
-    t.text    "g_data",                  :limit => 2147483647
-  end
-
-  add_index "g2_SessionMap", ["g_userId", "g_creationTimestamp", "g_modificationTimestamp"], :name => "g2_SessionMap_53500"
-
-  create_table "g2_TkOperatnMap", :primary_key => "g_name", :force => true do |t|
-    t.string "g_parametersCrc",  :limit => 32,  :null => false
-    t.string "g_outputMimeType", :limit => 128
-    t.string "g_description"
-  end
-
-  create_table "g2_TkOperatnMimeTypeMap", :id => false, :force => true do |t|
-    t.string  "g_operationName", :limit => 128, :null => false
-    t.string  "g_toolkitId",     :limit => 128, :null => false
-    t.string  "g_mimeType",      :limit => 128, :null => false
-    t.integer "g_priority",                     :null => false
-  end
-
-  add_index "g2_TkOperatnMimeTypeMap", ["g_mimeType"], :name => "g2_TkOperatnMimeTypeMap_79463"
-  add_index "g2_TkOperatnMimeTypeMap", ["g_operationName"], :name => "g2_TkOperatnMimeTypeMap_2014"
-
-  create_table "g2_TkOperatnParameterMap", :id => false, :force => true do |t|
-    t.string  "g_operationName", :limit => 128, :null => false
-    t.integer "g_position",                     :null => false
-    t.string  "g_type",          :limit => 128, :null => false
-    t.string  "g_description"
-  end
-
-  add_index "g2_TkOperatnParameterMap", ["g_operationName"], :name => "g2_TkOperatnParameterMap_2014"
-
-  create_table "g2_TkPropertyMap", :id => false, :force => true do |t|
-    t.string "g_name",        :limit => 128, :null => false
-    t.string "g_type",        :limit => 128, :null => false
-    t.string "g_description", :limit => 128, :null => false
-  end
-
-  create_table "g2_TkPropertyMimeTypeMap", :id => false, :force => true do |t|
-    t.string "g_propertyName", :limit => 128, :null => false
-    t.string "g_toolkitId",    :limit => 128, :null => false
-    t.string "g_mimeType",     :limit => 128, :null => false
-  end
-
-  add_index "g2_TkPropertyMimeTypeMap", ["g_mimeType"], :name => "g2_TkPropertyMimeTypeMap_79463"
-  add_index "g2_TkPropertyMimeTypeMap", ["g_propertyName"], :name => "g2_TkPropertyMimeTypeMap_52881"
-
-  create_table "g2_UnknownItem", :primary_key => "g_id", :force => true do |t|
-  end
-
-  create_table "g2_User", :primary_key => "g_id", :force => true do |t|
-    t.string  "g_userName",       :limit => 32,                 :null => false
-    t.string  "g_fullName",       :limit => 128
-    t.string  "g_hashedPassword", :limit => 128
-    t.string  "g_email"
-    t.string  "g_language",       :limit => 128
-    t.integer "g_locked",                        :default => 0
-  end
-
-  add_index "g2_User", ["g_userName"], :name => "g_userName", :unique => true
-
-  create_table "g2_UserGroupMap", :id => false, :force => true do |t|
-    t.integer "g_userId",  :null => false
-    t.integer "g_groupId", :null => false
-  end
-
-  add_index "g2_UserGroupMap", ["g_groupId"], :name => "g2_UserGroupMap_89328"
-  add_index "g2_UserGroupMap", ["g_userId"], :name => "g2_UserGroupMap_69068"
-
   create_table "gear_items", :force => true do |t|
     t.integer  "gear_type_id"
     t.string   "identifier"
@@ -827,6 +475,7 @@ ActiveRecord::Schema.define(:version => 20120712043012) do
     t.integer  "club_hire",       :default => 0
     t.integer  "club_deposit",    :default => 0
     t.string   "sort_type",       :default => "alpha"
+    t.boolean  "deleted",         :default => false
   end
 
   create_table "gs3_gear_items", :force => true do |t|
@@ -897,13 +546,21 @@ ActiveRecord::Schema.define(:version => 20120712043012) do
 
   add_index "gs3_schema_migrations", ["version"], :name => "gs3_unique_schema_migrations", :unique => true
 
+  create_table "gs3_user_notes", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "note"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "approver_id"
+  end
+
   create_table "gs3_users", :id => false, :force => true do |t|
-    t.integer "id",                             :default => 0,  :null => false
-    t.string  "username", :limit => 60,         :default => "", :null => false
-    t.string  "pass",     :limit => 32,         :default => "", :null => false
-    t.string  "mail",     :limit => 64,         :default => ""
-    t.text    "name",     :limit => 2147483647
-    t.string  "phone",    :limit => 15,         :default => "", :null => false
+    t.integer "id",                           :default => 0,  :null => false
+    t.string  "username", :limit => 60,       :default => "", :null => false
+    t.string  "pass",     :limit => 32,       :default => "", :null => false
+    t.string  "mail",     :limit => 64,       :default => ""
+    t.text    "name",     :limit => 16777215
+    t.string  "phone",    :limit => 15,       :default => "", :null => false
   end
 
   create_table "gs3_users_roles", :id => false, :force => true do |t|

@@ -1,6 +1,7 @@
 class GearItem < ActiveRecord::Base
   set_table_name 'gs3_gear_items'
 
+  default_scope :conditions => {:retired => nil}
 	belongs_to :gear_item_type
 	has_many :rental_items
 	has_many :gear_item_notes
@@ -18,6 +19,10 @@ class GearItem < ActiveRecord::Base
 	def name
 		"#{identifier} : #{clean_description}"	
 	end
+
+  def retire
+    update_attributes(:retired => Time.now)
+  end
 
 	def self.overdue
 		Rental.overdue.map{|rental| rental.rental_items.reject{|ri| ri.returned_on != nil}.map{|ri| ri.gear_item}}.flatten

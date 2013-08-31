@@ -15,6 +15,7 @@
 <tr><th>missing</td><td><%=f.check_box :missing %></td></tr>
 <tr><th>broken</td><td><%=f.check_box :broken %></td></tr>
 <tr><th>status</th><td><%="rented to " + @gear_item.rented_to.name if @gear_item.rented %></td></tr>
+<tr><th>retired</th><td><%= @gear_item.retired %></td></tr>
 <tr><th>&nbsp;</th><td><%=f.submit 'update', :class => 'button' %></td></tr>
 </table>
 <% end %>
@@ -58,7 +59,7 @@ There is no history.
 <p>
 <%=f.hidden_field :gear_item_id %>
 <%=f.text_field :note %>
-<%=f.collection_select :approver_id, User.admins, 'id', 'name' %> <%=submit_tag 'add note' %>
+<%=f.collection_select :approver_id, admins, 'id', 'name' %> <%=submit_tag 'add note' %>
 </p>
 <% end %>
 
