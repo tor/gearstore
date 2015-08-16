@@ -1,26 +1,37 @@
-
 -- List of users from Drupal 7 database
-CREATE VIEW gs3_users 
- SELECT 
-    users.uid AS id,
-    users.name AS username,
-    users.pass AS pass,
-    users.mail AS mail,
-    CONCAT_WS(_UTF8' ',
-            fn.field_account_first_name_value,
-            ln.field_account_last_name_value) AS name,
-    COALESCE(phone.field_account_home_phone_value,
-		     workPhone.field_account_work_phone_value) AS phone
-FROM users
-JOIN field_data_field_account_first_name fn 
-	ON fn.entity_id = users.uid
-JOIN field_data_field_account_last_name ln 
-	ON ln.entity_id = users.uid
-LEFT JOIN field_data_field_account_home_phone phone
-	on phone.entity_id = users.uid
-LEFT JOIN field_data_field_account_work_phone workPhone
-	on workPhone.entity_id = users.uid
-
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `drupal7`.`gs3_users` AS
+    SELECT 
+        `drupal7`.`users`.`uid` AS `id`,
+        `drupal7`.`users`.`name` AS `username`,
+        `drupal7`.`users`.`pass` AS `pass`,
+        `drupal7`.`users`.`mail` AS `mail`,
+        CONCAT_WS(_UTF8' ',
+                `fn`.`field_account_first_name_value`,
+                `ln`.`field_account_last_name_value`) AS `name`,
+        COALESCE(`phone`.`field_account_home_phone_value`,
+                `workPhone`.`field_account_work_phone_value`,
+                '') AS `phone`
+    FROM
+        ((((`drupal7`.`users`
+        JOIN `drupal7`.`field_data_field_account_first_name` `fn` ON ((`fn`.`entity_id` = `drupal7`.`users`.`uid`)))
+        JOIN `drupal7`.`field_data_field_account_last_name` `ln` ON ((`ln`.`entity_id` = `drupal7`.`users`.`uid`)))
+        LEFT JOIN `drupal7`.`field_data_field_account_home_phone` `phone` ON ((`phone`.`entity_id` = `drupal7`.`users`.`uid`)))
+        LEFT JOIN `drupal7`.`field_data_field_account_work_phone` `workPhone` ON ((`workPhone`.`entity_id` = `drupal7`.`users`.`uid`))) 
+    UNION SELECT 
+        `drupal7`.`gs3_legacy_users`.`id` AS `id`,
+        `drupal7`.`gs3_legacy_users`.`username` AS `username`,
+        `drupal7`.`gs3_legacy_users`.`pass` AS `pass`,
+        `drupal7`.`gs3_legacy_users`.`mail` AS `mail`,
+        CONCAT(`drupal7`.`gs3_legacy_users`.`name`,
+                _UTF8' (old)') AS `name`,
+        `drupal7`.`gs3_legacy_users`.`phone` AS `phone`
+    FROM
+        `drupal7`.`gs3_legacy_users`
+        
 create view gs3_roles_users as select uid as user_id, rid as role_id from users_roles;
 
 create view gs3_roles as select rid as id, name from role;
