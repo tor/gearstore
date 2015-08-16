@@ -5,6 +5,7 @@ body {
 	line-height: 1.2em;
 	background-color: #f5f5f5; 
   padding: 0px;
+  min-width: 1024px;
 }
 
 h1,h2,h3 {
@@ -85,7 +86,7 @@ div.header a:hover {
 
 div.menu {
 	float: right;
-	width: 10%;
+	width: 235px;
 	padding: 5px;
 	margin: 0px;
   color: white;
@@ -106,8 +107,7 @@ div.login {
 }
 
 div.container {
-	float: left;
-	width: 85%;
+	width: auto;
 	margin-left: -5px;
 	padding: 20px;
 	padding-top: 10px;
