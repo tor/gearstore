@@ -38,7 +38,7 @@
 			<td><%=g.identifier %></td>
 			<td><%=g.description %></td>
 			<td><%=g.size %></td>
-			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
+			<td><%=g.rented_to_name %></td>
 			<td>
 				<%= check_box_tag "missing[#{g.id}]", true, g.missing %>
 			</td>

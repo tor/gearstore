@@ -9,7 +9,15 @@ class GearItem < ActiveRecord::Base
 
 	def rented_to
 		return nil if not rented
-		rental_items.reject{|i| !i.returned_on.nil?}.first.rental.user
+		item = rental_items.reject{|i| !i.returned_on.nil?}.first
+		return nil if item == nil
+		return item.rental.user
+	end
+	
+	def rented_to_name
+	  return '' if not rented
+	  user = rented_to
+	  return user != nil ? user.name : 'Unknown User'
 	end
 
 	def clean_description
