@@ -1,23 +1,40 @@
 <% content_for :menu do %>
-	<ul>
-		<li><%=link_to 'entire inventory', gear_items_path %> </li>
-		<li><%=link_to 'missing items', gear_items_path(:filter => 'missing') %> </li>
-		<li><%=link_to 'broken items', gear_items_path(:filter => 'broken') %> </li>
-		<li><%=link_to 'rented items', gear_items_path(:filter => 'rented') %> </li>
-		<li><%=link_to 'overdue items', gear_items_path(:filter => 'overdue') %></li>
-    <li><%=link_to 'retired items', gear_items_path(:filter => 'retired') %></li>
-		<li><%=link_to 'export inventory', export_gear_items_path %></li>
-	</ul>
-	<%= form_tag gear_items_path, :method => 'get' do %>
-		<p>
-		filter by item type: <br />
-		<%= hidden_field_tag :filter, 'type' %>
-		<%= select_tag(:data, 
-			options_from_collection_for_select(GearItemType.all_sorted, 'id', 'name', @type), 
-			{:prompt => 'filter by type', :onchange => '$(this).closest("form").submit();'})
-		%>
-		</p>
-	<% end %>
+<ul>
+  <li>
+    <%= link_to 'entire inventory', gear_items_path %>
+  </li>
+  <li>
+    <%= link_to 'missing items', gear_items_path(:filter => 'missing') %>
+  </li>
+  <li>
+    <%= link_to 'broken items', gear_items_path(:filter => 'broken') %>
+  </li>
+  <li>
+    <%= link_to 'rented items', gear_items_path(:filter => 'rented') %>
+  </li>
+  <li>
+    <%= link_to 'overdue items', gear_items_path(:filter => 'overdue') %>
+  </li>
+  <li>
+    <%= link_to 'retired items', gear_items_path(:filter => 'retired') %>
+  </li>
+  <li>
+    <%= link_to 'export inventory', export_gear_items_path %>
+  </li>
+</ul>
+<%= form_tag gear_items_path, :method => 'get' do %>
+<p>
+  <div class="filter_by_type_control">
+    <span>filter by item type:</span>
+    <br />
+    <%= hidden_field_tag :filter, 'type' %>
+    <%= select_tag(:data,
+    options_from_collection_for_select(GearItemType.all_sorted, 'id', 'name', @type),
+    {:prompt => 'filter by type', :onchange => '$(this).closest("form").submit();'})
+%>
+  </div>
+</p>
+<% end %>
 <% end %>
 
 <%= render :template => 'layouts/application' %>
