@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
 
 	def self.admins
-    # 23 is the role id for gear store officers. FIXME
-    Role.find(3).users.sort{|x, y| x.name <=> y.name}
+    # 20 is the role id for gear store officers.
+    Role.find(20).users.sort{|x, y| x.name <=> y.name}
 	end
 	
   def self.authenticate(user, pass)
@@ -24,8 +24,8 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-     # 23 is the role id for gear store officers. FIXME    
-    return roles.reject{|r| r.id != 3}.size > 0
+     # 20 is the role id for gear store officers.    
+    return roles.reject{|r| r.id != 20}.size > 0
   end
 
 	def deposit_amount
