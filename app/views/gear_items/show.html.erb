@@ -14,7 +14,7 @@
 <tr><th>year purchased</td><td><%=f.text_field :year_purchased %></td></tr>
 <tr><th>missing</td><td><%=f.check_box :missing %></td></tr>
 <tr><th>broken</td><td><%=f.check_box :broken %></td></tr>
-<tr><th>status</th><td><%="rented to " + @gear_item.rented_to.name if @gear_item.rented %></td></tr>
+<tr><th>status</th><td><%="Rented to: " + @gear_item.rented_to_name if @gear_item.rented %></td></tr>
 <tr><th>retired</th><td><%= @gear_item.retired %></td></tr>
 <tr><th>&nbsp;</th><td><%=f.submit 'update', :class => 'button' %></td></tr>
 </table>

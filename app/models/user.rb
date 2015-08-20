@@ -1,3 +1,5 @@
+require 'ruby_drupal_hash'
+
 class User < ActiveRecord::Base
   set_primary_key 'id'
 
@@ -8,17 +10,22 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
 
 	def self.admins
-    # 23 is the role id for gear store officers.
-    Role.find(23).users.sort{|x, y| x.name <=> y.name}
+    # 20 is the role id for gear store officers.
+    Role.find(20).users.sort{|x, y| x.name <=> y.name}
 	end
-
+	
   def self.authenticate(user, pass)
-    u = User.find(:first, :conditions => {:username => user, :pass => Digest::MD5.hexdigest(pass)})
-    return (u and u.admin?)?u:nil
+    u = User.find(:first, :conditions => {:username => user}) 
+    return (u.verify_password(pass) and u.admin?) ? u : nil ;
+  end
+  
+  def verify_password(candidate_password)
+    return RubyDrupalHash.new.verify(candidate_password, pass)
   end
 
   def admin?
-    roles.reject{|r| r.id != 23}.size > 0
+     # 20 is the role id for gear store officers.    
+    return roles.reject{|r| r.id != 20}.size > 0
   end
 
 	def deposit_amount

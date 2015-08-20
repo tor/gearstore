@@ -22,7 +22,7 @@
   			<td><%=g.gear_item_type.name %></td>
   			<td><%=g.identifier %></td>
   			<td><%=g.description %></td>
-  			<td><%=(g.rented)?(g.rented_to.name):('') %></td>
+  			<td><%=g.rented_to_name%></td>
   			<td><%='yes' if g.missing %></td>
   			<td>
           <%=link_to 'more', gear_item_path(g) %> |
