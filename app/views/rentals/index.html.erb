@@ -40,7 +40,7 @@
   <% @users.each do |u| %>
   <tr>
     <td> <%= link_to u.name, new_rental_path(:user_id => u.id) %></td>
-    <td><%= u.rentals.size%></td>
+    <td><%= u.rentals.size %></td>
     <td><%= u.rental_number %></td>
     <td><%= u.overdue_rental_number %></td>
     <td><%= problem_tag('has overdue rentals') if u.has_overdue? %></td>
