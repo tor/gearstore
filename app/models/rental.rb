@@ -4,11 +4,11 @@ class Rental < ActiveRecord::Base
 	accepts_nested_attributes_for :rental_items, :allow_destroy => true, :reject_if => lambda {|ri| ri[:gear_item_id].blank? }
 
 	def self.active
-		Rental.all.reject{|r| !r.active?}
+		Rental.includes(:rental_items).reject{|r| !r.active?}
 	end
 
 	def self.overdue
-		Rental.all.reject{|r| !r.overdue?}
+		Rental.includes(:rental_items).reject{|r| !r.overdue?}
 	end
 
 	def approver
