@@ -42,6 +42,13 @@ div.clear {
   margin-bottom: 5px;
 }
 
+div.clear_left {
+  clear: left;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+
 div.long_col, div.long_col_dark {
   width: 180px;
   float: left;
