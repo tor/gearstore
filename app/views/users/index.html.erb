@@ -1,21 +1,28 @@
 <h3>Users</h3>
 <% if @users %>
-  <table class="data" id="users">
-    <thead>
-      <tr><th>name</th><th>email</th><th>phone</th><th>#current rentals</th><th>#overdue rentals</th><th>more</th></tr>
-    </thead>
-    <% @users.each do |u| %>
-      <tr>
-        <td><%=u.name%></td>
-        <td><%=u.mail%></td>
-        <td><%=u.phone%></td>
-        <td><%=u.rental_number%> </td>
-        <td><%=u.overdue_rental_number%> </td>
-        <td><%=link_to 'more', user_path(u) %></td>
-      </tr>
-    <% end %>
-  </table>
+<table class="data" id="users">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Membership Years</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>#Current Rentals</th>
+      <th>#Overdue Rentals</th>
+    </tr>
+  </thead>
+  <% @users.each do |u| %>
+  <tr>
+    <td><%= link_to u.name, user_path(u) %></td>
+    <td><%= u.membership_years_display%></td>
+    <td><%= u.mail%></td>
+    <td><%= u.phone%></td>
+    <td><%= u.rental_number%> </td>
+    <td><%= u.overdue_rental_number%> </td>
+  </tr>
+  <% end %>
+</table>
 
 <% else %>
-  Please search for a user
+Please search for a user
 <% end %>
