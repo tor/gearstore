@@ -2,67 +2,74 @@ body {
   font-family: Gill Sans, Gill Sans MT, tahoma, verdana, helvetica, arial, sans-serif;
   line-height: 1.1em;
   font: 0.9em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-	line-height: 1.2em;
-	background-color: #f5f5f5; 
+  line-height: 1.2em;
+  background-color: #f5f5f5;
   padding: 0px;
   min-width: 1024px;
 }
 
-h1,h2,h3 {
-	text-align: left;
+h1, h2, h3 {
+  text-align: left;
 }
 
 /* divs and layout */
 
 div.rental_item_form {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 div.tab, div.tab_selected, div.tab_right {
-	float: left;
-/*	background-color: #ccc;*/
-/*	border-radius: 20px;
-/*	background-color: #FF33D6;*/
-/*	border: solid gray 1px;*/
+  float: left;
+  /*	background-color: #ccc;*/
+  /*	border-radius: 20px;
+   /*	background-color: #FF33D6;*/
+  /*	border: solid gray 1px;*/
 
-	padding: 5px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	margin-right: 5px;
+  padding: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 div.tab_right {
-	float: right;
+  float: right;
 }
 
 div.clear {
-	clear: both;
-	margin: 0px;
-	padding: 0px;
-	margin-bottom: 5px;
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+
+div.clear_left {
+  clear: left;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 5px;
 }
 
 div.long_col, div.long_col_dark {
-	width: 180px;
-	float: left;
-	margin-bottom: 5px;
-	padding: 2px;
+  width: 180px;
+  float: left;
+  margin-bottom: 5px;
+  padding: 2px;
 }
 
 div.col, div.col_dark {
-	float: left;
-	width: 80px;
-	padding: 2px;
+  float: left;
+  width: 80px;
+  padding: 2px;
 }
 
 div.col_dark {
-	background-color: #bbb;
-	font-weight: bold;
+  background-color: #bbb;
+  font-weight: bold;
 }
 
 div.long_col_dark {
-	background-color: #bbb;
-	font-weight: bold;
+  background-color: #bbb;
+  font-weight: bold;
 }
 
 div.header {
@@ -71,7 +78,6 @@ div.header {
   padding: 5px;
   margin: 0px;
 }
-
 
 div.header a {
   margin-right: 40px;
@@ -84,10 +90,10 @@ div.header a:hover {
 }
 
 div.menu {
-	float: right;
-	width: 235px;
-	padding: 5px;
-	margin: 0px;
+  float: right;
+  width: 200px;
+  padding: 5px;
+  margin: 0px;
   color: white;
 }
 
@@ -106,56 +112,56 @@ div.login {
 }
 
 div.container {
-	width: auto;
-	margin-left: -5px;
-	padding: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-top: 5px;
+  width: auto;
+  margin-left: -5px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+  /* Must be the size of the menu.*/
+  margin-right: 210px;
 }
 
 div.content {
-	padding: 10px;
-	padding: 10px;
+  padding: 10px;
+  padding: 10px;
 }
 
 /* links */
 
 a {
-	color: #00a;
-	text-decoration: none;
+  color: #00a;
+  text-decoration: none;
 }
 
 /* lists */
 
 div.menu ul {
-	margin-left: 0px;
-	padding: 0px;
-	list-style-type: none;
+  margin-left: 0px;
+  padding: 0px;
+  list-style-type: none;
 }
 
 div.menu li {
-	margin-bottom: 8px;
+  margin-bottom: 8px;
 }
-
-
 
 /* forms */
 
 form label {
-	float: left;
-	width: 200px;
-	line-height: 2em;
+  float: left;
+  width: 200px;
+  line-height: 2em;
   color: black;
 }
 
 label {
-	float: left;
-	width: 200px;
+  float: left;
+  width: 200px;
 }
 
 select.update, select.watch {
-	width: 150px;
+  width: 150px;
 }
 
 input {
@@ -168,73 +174,68 @@ input.button {
   padding-right: 10px;
 }
 
-
 /* tables */
 
-
 table.data {
-	border-collapse: collapse;
-	border: solid #aaa 1px;
+  border-collapse: collapse;
+  border: solid #aaa 1px;
 }
 
 table.data th {
-	background-color: solid #098571 1px;
-/*	background-color: #CAB3E3;*/
-	padding: 5px;
-	padding-right: 20px;
-	text-align: left;
-	border-bottom: solid #aaa 1px;
+  background-color: solid #098571 1px;
+  /*	background-color: #CAB3E3;*/
+  padding: 5px;
+  padding-right: 20px;
+  text-align: left;
+  border-bottom: solid #aaa 1px;
 }
 
-
 table.data td {
-	border-bottom: solid #aaa 1px;
-	padding: 5px;
-	padding-right: 20px;
+  border-bottom: solid #aaa 1px;
+  padding: 5px;
+  padding-right: 20px;
 }
 
 table.data tr.odd {
-	background-color: #eee;
-/*	background-color: #DAC4F2;*/
+  background-color: #eee;
+  /*	background-color: #DAC4F2;*/
 }
 
 table.data tr {
-/*	background-color: #DDC3F7;*/
-/*	background-color: #CAB3E3;*/
+  /*	background-color: #DDC3F7;*/
+  /*	background-color: #CAB3E3;*/
 }
-
 
 /* spans */
 
 span.overdue {
-	color: red;
-	text-decoration: underline;
+  color: red;
+  text-decoration: underline;
 }
 
 span.not_overdue {
-	color: green;
+  color: green;
 }
-
 
 /* tool-tip */
 
 div.info {
-	background-color: #eee;
-	display: none;
-	position: absolute;
-	float: left;
-	border: solid black 1px;
-	padding: 5px;
-	margin-left: 100px;
-	margin-top: 10px;
-	width: 200px;
-	border-radius:5px;
+  background-color: #eee;
+  display: none;
+  position: absolute;
+  float: left;
+  border: solid black 1px;
+  padding: 5px;
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 200px;
+  border-radius: 5px;
 }
 
 /* login page */
 
 div.login {
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 
 div.login input {
@@ -253,15 +254,11 @@ div.login img {
   left: 50px;
 }
 
-
 div.login label {
-	float: left;
-	width: 100px;
+  float: left;
+  width: 100px;
   padding: 0px;
   margin: 0px;
   line-height: 1.0em;
 }
-
-
-
 

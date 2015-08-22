@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:rentals, :deposit).find(params[:id])
     @note = UserNote.new(:user_id => @user.id)
   end
 end

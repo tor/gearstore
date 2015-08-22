@@ -1,35 +1,33 @@
-<h3><%=@label %></h3>
-
+<h3><%= @label %></h3>
 
 <table class="data" id="deposits">
-<thead>
-	<tr>
-		<th>user</th>
-		<th>amount</th>
-		<th>active rentals</th>
-		<th>outstanding rentals</th>
-		<th>action</th>
-	</tr>
-</thead>
-<% @users.each do |user| %>
-	<tr>
-		<td><%=user.name %></td>
-		<td><%=user.deposit_amount %></td>
-		<td><%=user.rentals.reject{|r| !r.active?}.size %></td>
-		<td><%=user.rentals.reject{|r| !r.overdue?}.size %></td>
-		<td>
-      <% if user.deposit_amount > 0 %>
-  			<%=link_to 'return', deposit_path(user.deposit)%> |
-  			<%=link_to 'claim', claim_deposit_path(user.deposit) %>
-      <% end %>
-	</tr>
-<% end %>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Active Rentals</th>
+      <th>Outstanding Rentals</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+    <td><%= user.deposit_amount %></td>
+    <td><%= user.rentals.reject{|r| !r.active?}.size %></td>
+    <td><%= user.rentals.reject{|r| !r.overdue?}.size %></td>
+    <td> <% if user.deposit_amount > 0 %>
+    <%= link_to 'return', deposit_path(user.deposit)%> |
+    <%= link_to 'claim', claim_deposit_path(user.deposit) %>
+    <% end %>
+  </tr>
+  <% end %>
 </table>
 
-
-
 <script type="text/javascript">
-$(document).ready(function() {
-	$('#deposits').tablesorter({widgets: ['zebra']});
-})
+  $(document).ready(function() {
+    $('#deposits').tablesorter({
+      widgets:['zebra']
+    });
+  })
 </script>

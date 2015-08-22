@@ -30,7 +30,7 @@
 <%= nested_form_for @rental do |f| %>
 	<%=f.hidden_field :user_id %>
 	<div class="long_col_dark">item type</div><div class="long_col_dark">item</div><div class="col_dark">fee ($)</div><div class="long_col_dark">deposit ($)</div>
-	<div class="clear">
+	<div class="clear_left">
 	<p><%= f.fields_for :rental_items %> </p>
 	<p><%= f.link_to_add 'add item', :rental_items %> </p>
 

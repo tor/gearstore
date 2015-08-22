@@ -12,7 +12,7 @@ class RentalsController < ApplicationController
 			@rentals = Rental.overdue
 			@label = "Overdue rentals"
 		elsif params[:all]
-			@rentals = Rental.all
+			@rentals = Rental.includes(:rental_items).all
 			@label = "All rentals"
 		else
 			@rentals = Rental.active
