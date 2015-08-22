@@ -111,7 +111,8 @@ div.container {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 5px;
-  float: left;
+  /* Must be the size of the menu.*/
+  margin-right: 210px;
 }
 
 div.content {
