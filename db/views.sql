@@ -1,4 +1,5 @@
 -- List of users from Drupal 7 database
+DROP VIEW IF EXISTS drupal7.gs3_users;
 CREATE VIEW drupal7.gs3_users AS
 SELECT
   user.uid AS id,
@@ -41,12 +42,14 @@ FROM drupal7.gs3_legacy_users legacy_user
 WHERE legacy_user.reconciled = 0;
 
 -- Roles and users.
+DROP VIEW IF EXISTS drupal7.gs3_roles_users;
 CREATE VIEW drupal7.gs3_roles_users AS
     SELECT
     uid AS user_id,
         rid AS role_id
     FROM drupal7.users_roles;
 
+DROP VIEW IF EXISTS drupal7.gs3_roles;
 CREATE VIEW drupal7.gs3_roles AS
     SELECT
         rid AS id,
