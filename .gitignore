@@ -36,3 +36,9 @@ bower.json
 .powenv
 
 tmp
+
+# Ignore password laden file for database config
+/config/database.yml
+
+# Ignore Mac OS X hidden directory options files
+.DS_Store
